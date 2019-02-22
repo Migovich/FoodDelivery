@@ -14,6 +14,6 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         self.navigationItem.title = "Menu"
-        self.view.backgroundColor = .blue
+        self.view.backgroundColor = UIColor.mainGreen()
     }
 }

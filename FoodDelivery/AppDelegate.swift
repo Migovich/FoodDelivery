@@ -16,19 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        
-//        let mainVC = MainViewController()
-//        let profileVC = ProfileViewController()
-//        let orderVC = OrderViewController()
-//
-//        let mainNavController = UINavigationController(rootViewController: mainVC)
-//        let profileNavController = UINavigationController(rootViewController: profileVC)
-//        let orderNavController = UINavigationController(rootViewController: orderVC)
-//
-//        let tabBarVC = UITabBarController()
-//        tabBarVC.setViewControllers([mainNavController, profileNavController, orderNavController], animated: true)
-        
+        self.window = UIWindow(frame: UIScreen.main.bounds)        
         self.window?.rootViewController = MainTabBarViewController()
         self.window?.makeKeyAndVisible()
         

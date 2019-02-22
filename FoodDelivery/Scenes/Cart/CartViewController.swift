@@ -14,6 +14,6 @@ class CartViewController: UIViewController {
         super.viewDidLoad()
 
         self.navigationItem.title = "Cart"
-        self.view.backgroundColor = .green
+        self.view.backgroundColor = UIColor.mainGreen()
     }
 }

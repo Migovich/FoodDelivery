@@ -18,15 +18,15 @@ class MainTabBarViewController: UITabBarController {
     func setupTabBar() {
         
         let mainVC = UINavigationController(rootViewController: MainViewController())
-        mainVC.tabBarItem.image = #imageLiteral(resourceName: "cutlery")
+        mainVC.tabBarItem.image = #imageLiteral(resourceName: "menu")
         mainVC.tabBarItem.title = "Menu"
         
         let cartVC = UINavigationController(rootViewController: CartViewController())
-        cartVC.tabBarItem.image = #imageLiteral(resourceName: "shopping-bag")
+        cartVC.tabBarItem.image = #imageLiteral(resourceName: "cart")
         cartVC.tabBarItem.title = "Cart"
         
         let profileVC = UINavigationController(rootViewController: ProfileViewController())
-        profileVC.tabBarItem.image = #imageLiteral(resourceName: "avatar")
+        profileVC.tabBarItem.image = #imageLiteral(resourceName: "profile")
         profileVC.tabBarItem.title = "Profile"
         
         viewControllers = [mainVC, cartVC, profileVC]
