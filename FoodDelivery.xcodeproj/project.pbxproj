@@ -7,22 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD2EECC5222AE8CB00C9FFAB /* MainConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2EECC4222AE8CB00C9FFAB /* MainConfigurator.swift */; };
+		CD2EECC7222AF8EE00C9FFAB /* CartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2EECC6222AF8EE00C9FFAB /* CartPresenter.swift */; };
+		CD2EECC9222AF8FA00C9FFAB /* CartViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2EECC8222AF8FA00C9FFAB /* CartViewRouter.swift */; };
+		CD2EECCB222AF90F00C9FFAB /* CartConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2EECCA222AF90F00C9FFAB /* CartConfigurator.swift */; };
+		CD2EECCD222AF94800C9FFAB /* ProfileConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2EECCC222AF94800C9FFAB /* ProfileConfigurator.swift */; };
+		CD2EECCF222AF95A00C9FFAB /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2EECCE222AF95A00C9FFAB /* ProfilePresenter.swift */; };
+		CD2EECD1222AF97200C9FFAB /* ProfileViewRouterswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2EECD0222AF97200C9FFAB /* ProfileViewRouterswift.swift */; };
+		CD2EECD3222AF98700C9FFAB /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2EECD2222AF98700C9FFAB /* MainPresenter.swift */; };
+		CD2EECD5222AF99900C9FFAB /* MainViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2EECD4222AF99900C9FFAB /* MainViewRouter.swift */; };
+		CD2EECD8222AFDF300C9FFAB /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2EECD7222AFDF300C9FFAB /* ViewRouter.swift */; };
 		CD6A09E1222039C20003162E /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A09E0222039C20003162E /* Extension.swift */; };
 		CD6C6CE9221F265E004C9DD0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C6CE8221F265E004C9DD0 /* MainViewController.swift */; };
 		CD6C6CEF221F2701004C9DD0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C6CEE221F2701004C9DD0 /* ProfileViewController.swift */; };
 		CD6C6CF1221F2784004C9DD0 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C6CF0221F2784004C9DD0 /* CartViewController.swift */; };
 		CD6C6CF5221F2B6D004C9DD0 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C6CF4221F2B6D004C9DD0 /* MainTabBarViewController.swift */; };
+		CD700E7F22216DD700435D4D /* MainTabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD700E7E22216DD700435D4D /* MainTabBarPresenter.swift */; };
 		CDD6C16A221D687C0005710C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD6C169221D687C0005710C /* AppDelegate.swift */; };
 		CDD6C171221D687D0005710C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDD6C170221D687D0005710C /* Assets.xcassets */; };
 		CDD6C174221D687D0005710C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDD6C172221D687D0005710C /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD2EECC4222AE8CB00C9FFAB /* MainConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainConfigurator.swift; sourceTree = "<group>"; };
+		CD2EECC6222AF8EE00C9FFAB /* CartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPresenter.swift; sourceTree = "<group>"; };
+		CD2EECC8222AF8FA00C9FFAB /* CartViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewRouter.swift; sourceTree = "<group>"; };
+		CD2EECCA222AF90F00C9FFAB /* CartConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartConfigurator.swift; sourceTree = "<group>"; };
+		CD2EECCC222AF94800C9FFAB /* ProfileConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileConfigurator.swift; sourceTree = "<group>"; };
+		CD2EECCE222AF95A00C9FFAB /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		CD2EECD0222AF97200C9FFAB /* ProfileViewRouterswift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewRouterswift.swift; sourceTree = "<group>"; };
+		CD2EECD2222AF98700C9FFAB /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		CD2EECD4222AF99900C9FFAB /* MainViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewRouter.swift; sourceTree = "<group>"; };
+		CD2EECD7222AFDF300C9FFAB /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		CD6A09E0222039C20003162E /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		CD6C6CE8221F265E004C9DD0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CD6C6CEE221F2701004C9DD0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CD6C6CF0221F2784004C9DD0 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		CD6C6CF4221F2B6D004C9DD0 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		CD700E7E22216DD700435D4D /* MainTabBarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarPresenter.swift; sourceTree = "<group>"; };
 		CDD6C166221D687C0005710C /* FoodDelivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodDelivery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD6C169221D687C0005710C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDD6C170221D687D0005710C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -41,9 +63,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD2EECD6222AFDDD00C9FFAB /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				CD2EECD7222AFDF300C9FFAB /* ViewRouter.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		CD6C6CEA221F266D004C9DD0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CD700E7D22216D9000435D4D /* Main */,
 				CD6C6CED221F26BE004C9DD0 /* Cart */,
 				CD6C6CEC221F26A8004C9DD0 /* Profile */,
 				CD6C6CEB221F2696004C9DD0 /* Menu */,
@@ -54,7 +85,10 @@
 		CD6C6CEB221F2696004C9DD0 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				CD2EECC4222AE8CB00C9FFAB /* MainConfigurator.swift */,
+				CD2EECD2222AF98700C9FFAB /* MainPresenter.swift */,
 				CD6C6CE8221F265E004C9DD0 /* MainViewController.swift */,
+				CD2EECD4222AF99900C9FFAB /* MainViewRouter.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -62,7 +96,10 @@
 		CD6C6CEC221F26A8004C9DD0 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				CD2EECCC222AF94800C9FFAB /* ProfileConfigurator.swift */,
+				CD2EECCE222AF95A00C9FFAB /* ProfilePresenter.swift */,
 				CD6C6CEE221F2701004C9DD0 /* ProfileViewController.swift */,
+				CD2EECD0222AF97200C9FFAB /* ProfileViewRouterswift.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -70,9 +107,21 @@
 		CD6C6CED221F26BE004C9DD0 /* Cart */ = {
 			isa = PBXGroup;
 			children = (
+				CD2EECCA222AF90F00C9FFAB /* CartConfigurator.swift */,
+				CD2EECC6222AF8EE00C9FFAB /* CartPresenter.swift */,
 				CD6C6CF0221F2784004C9DD0 /* CartViewController.swift */,
+				CD2EECC8222AF8FA00C9FFAB /* CartViewRouter.swift */,
 			);
 			path = Cart;
+			sourceTree = "<group>";
+		};
+		CD700E7D22216D9000435D4D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CD6C6CF4221F2B6D004C9DD0 /* MainTabBarViewController.swift */,
+				CD700E7E22216DD700435D4D /* MainTabBarPresenter.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		CDD6C15D221D687B0005710C = {
@@ -95,9 +144,9 @@
 			isa = PBXGroup;
 			children = (
 				CD6A09E0222039C20003162E /* Extension.swift */,
+				CD2EECD6222AFDDD00C9FFAB /* Other */,
 				CD6C6CEA221F266D004C9DD0 /* Scenes */,
 				CDD6C169221D687C0005710C /* AppDelegate.swift */,
-				CD6C6CF4221F2B6D004C9DD0 /* MainTabBarViewController.swift */,
 				CDD6C170221D687D0005710C /* Assets.xcassets */,
 				CDD6C172221D687D0005710C /* LaunchScreen.storyboard */,
 				CDD6C175221D687D0005710C /* Info.plist */,
@@ -175,12 +224,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD2EECD5222AF99900C9FFAB /* MainViewRouter.swift in Sources */,
+				CD2EECC9222AF8FA00C9FFAB /* CartViewRouter.swift in Sources */,
 				CD6C6CEF221F2701004C9DD0 /* ProfileViewController.swift in Sources */,
+				CD2EECC5222AE8CB00C9FFAB /* MainConfigurator.swift in Sources */,
+				CD2EECC7222AF8EE00C9FFAB /* CartPresenter.swift in Sources */,
+				CD2EECCD222AF94800C9FFAB /* ProfileConfigurator.swift in Sources */,
+				CD2EECCB222AF90F00C9FFAB /* CartConfigurator.swift in Sources */,
 				CD6C6CE9221F265E004C9DD0 /* MainViewController.swift in Sources */,
 				CD6C6CF5221F2B6D004C9DD0 /* MainTabBarViewController.swift in Sources */,
 				CD6A09E1222039C20003162E /* Extension.swift in Sources */,
+				CD2EECD1222AF97200C9FFAB /* ProfileViewRouterswift.swift in Sources */,
+				CD2EECD3222AF98700C9FFAB /* MainPresenter.swift in Sources */,
+				CD700E7F22216DD700435D4D /* MainTabBarPresenter.swift in Sources */,
+				CD2EECD8222AFDF300C9FFAB /* ViewRouter.swift in Sources */,
 				CDD6C16A221D687C0005710C /* AppDelegate.swift in Sources */,
 				CD6C6CF1221F2784004C9DD0 /* CartViewController.swift in Sources */,
+				CD2EECCF222AF95A00C9FFAB /* ProfilePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

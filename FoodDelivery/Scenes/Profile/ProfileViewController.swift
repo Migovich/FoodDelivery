@@ -84,9 +84,6 @@ class ProfileViewController: UIViewController {
     @objc func handleSave() {
     }
     
-    @objc func handleShowLogin() {
-        navigationController?.popViewController(animated: true)
-    }
     // MARK: - API
     
     // MARK: - Helper Functions
