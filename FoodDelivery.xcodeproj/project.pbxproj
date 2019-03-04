@@ -13,7 +13,7 @@
 		CD2EECCB222AF90F00C9FFAB /* CartConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2EECCA222AF90F00C9FFAB /* CartConfigurator.swift */; };
 		CD2EECCD222AF94800C9FFAB /* ProfileConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2EECCC222AF94800C9FFAB /* ProfileConfigurator.swift */; };
 		CD2EECCF222AF95A00C9FFAB /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2EECCE222AF95A00C9FFAB /* ProfilePresenter.swift */; };
-		CD2EECD1222AF97200C9FFAB /* ProfileViewRouterswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2EECD0222AF97200C9FFAB /* ProfileViewRouterswift.swift */; };
+		CD2EECD1222AF97200C9FFAB /* ProfileViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2EECD0222AF97200C9FFAB /* ProfileViewRouter.swift */; };
 		CD2EECD3222AF98700C9FFAB /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2EECD2222AF98700C9FFAB /* MainPresenter.swift */; };
 		CD2EECD5222AF99900C9FFAB /* MainViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2EECD4222AF99900C9FFAB /* MainViewRouter.swift */; };
 		CD2EECD8222AFDF300C9FFAB /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2EECD7222AFDF300C9FFAB /* ViewRouter.swift */; };
@@ -35,7 +35,7 @@
 		CD2EECCA222AF90F00C9FFAB /* CartConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartConfigurator.swift; sourceTree = "<group>"; };
 		CD2EECCC222AF94800C9FFAB /* ProfileConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileConfigurator.swift; sourceTree = "<group>"; };
 		CD2EECCE222AF95A00C9FFAB /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
-		CD2EECD0222AF97200C9FFAB /* ProfileViewRouterswift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewRouterswift.swift; sourceTree = "<group>"; };
+		CD2EECD0222AF97200C9FFAB /* ProfileViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewRouter.swift; sourceTree = "<group>"; };
 		CD2EECD2222AF98700C9FFAB /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		CD2EECD4222AF99900C9FFAB /* MainViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewRouter.swift; sourceTree = "<group>"; };
 		CD2EECD7222AFDF300C9FFAB /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 				CD2EECCC222AF94800C9FFAB /* ProfileConfigurator.swift */,
 				CD2EECCE222AF95A00C9FFAB /* ProfilePresenter.swift */,
 				CD6C6CEE221F2701004C9DD0 /* ProfileViewController.swift */,
-				CD2EECD0222AF97200C9FFAB /* ProfileViewRouterswift.swift */,
+				CD2EECD0222AF97200C9FFAB /* ProfileViewRouter.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -234,7 +234,7 @@
 				CD6C6CE9221F265E004C9DD0 /* MainViewController.swift in Sources */,
 				CD6C6CF5221F2B6D004C9DD0 /* MainTabBarViewController.swift in Sources */,
 				CD6A09E1222039C20003162E /* Extension.swift in Sources */,
-				CD2EECD1222AF97200C9FFAB /* ProfileViewRouterswift.swift in Sources */,
+				CD2EECD1222AF97200C9FFAB /* ProfileViewRouter.swift in Sources */,
 				CD2EECD3222AF98700C9FFAB /* MainPresenter.swift in Sources */,
 				CD700E7F22216DD700435D4D /* MainTabBarPresenter.swift in Sources */,
 				CD2EECD8222AFDF300C9FFAB /* ViewRouter.swift in Sources */,

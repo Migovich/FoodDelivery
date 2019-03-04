@@ -9,20 +9,21 @@
 import UIKit
 
 class CartViewController: UIViewController, CartView {
-    
+
     var presenter: CartPresenter!
-    var configurator: CartConfigurator!
+    var configurator = CartConfiguratorImplementation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //self.navigationItem.title = "Cart"
         self.view.backgroundColor = UIColor.mainGreen()
-        self.configurator.configure(cartViewController: self)
-        self.presenter.viewDidLoad()
+        configurator.configure(cartViewController: self)
+        presenter.viewDidLoad()
     }
     
     func displayScreenTitle(title: String) {
         self.navigationItem.title = title
     }
+    
+    
 }
