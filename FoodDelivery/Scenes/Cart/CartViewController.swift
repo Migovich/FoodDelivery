@@ -24,6 +24,4 @@ class CartViewController: UIViewController, CartView {
     func displayScreenTitle(title: String) {
         self.navigationItem.title = title
     }
-    
-    
 }

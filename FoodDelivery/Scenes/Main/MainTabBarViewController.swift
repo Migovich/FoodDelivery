@@ -12,7 +12,7 @@ class MainTabBarViewController: UITabBarController {
     
     var presenter: MainPresenter!
     
-    private let mainVC = MainViewController()
+    private let mainVC = ProductsTableViewController()
     private let cartVC = CartViewController()
     private let profileVC = ProfileViewController()
 
