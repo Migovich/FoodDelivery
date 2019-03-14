@@ -10,6 +10,7 @@ import Foundation
 
 protocol ProductsView: class {
     func displayScreenTitle(title: String)
+    func setupView()
 }
 
 protocol ProductCellView {
@@ -40,6 +41,7 @@ class ProductsPresenterImplementation: ProductsPresenter {
     
     func viewDidLoad() {
         view?.displayScreenTitle(title: "Menu")
+        view?.setupView()
     }
     
     func configure(cell: ProductCellView, forRow row: Int) {

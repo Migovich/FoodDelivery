@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD049DA7223ABE00009280D5 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD049DA6223ABE00009280D5 /* ReusableView.swift */; };
 		CD05C784222DDA370077041E /* ProductsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05C782222DDA370077041E /* ProductsTableViewCell.swift */; };
 		CD05C78D2230098F0077041E /* MainTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD05C78C2230098F0077041E /* MainTableViewController.xib */; };
 		CD05C7AF22302F4B0077041E /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05C7AE22302F4B0077041E /* Products.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD049DA6223ABE00009280D5 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		CD05C782222DDA370077041E /* ProductsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewCell.swift; sourceTree = "<group>"; };
 		CD05C78C2230098F0077041E /* MainTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewController.xib; sourceTree = "<group>"; };
 		CD05C7AE22302F4B0077041E /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			children = (
 				CD05C7AC22302F210077041E /* Core */,
 				CD6A09E0222039C20003162E /* Extension.swift */,
+				CD049DA6223ABE00009280D5 /* ReusableView.swift */,
 				CD2EECD6222AFDDD00C9FFAB /* Other */,
 				CD6C6CEA221F266D004C9DD0 /* Scenes */,
 				CDD6C169221D687C0005710C /* AppDelegate.swift */,
@@ -261,6 +264,7 @@
 				CD6C6CF5221F2B6D004C9DD0 /* MainTabBarViewController.swift in Sources */,
 				CD6A09E1222039C20003162E /* Extension.swift in Sources */,
 				CD05C784222DDA370077041E /* ProductsTableViewCell.swift in Sources */,
+				CD049DA7223ABE00009280D5 /* ReusableView.swift in Sources */,
 				CD2EECD1222AF97200C9FFAB /* ProfileViewRouter.swift in Sources */,
 				CD2EECD3222AF98700C9FFAB /* ProductsPresenter.swift in Sources */,
 				CD700E7F22216DD700435D4D /* MainTabBarPresenter.swift in Sources */,

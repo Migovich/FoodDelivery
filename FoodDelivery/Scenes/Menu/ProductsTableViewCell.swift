@@ -9,8 +9,6 @@
 import UIKit
 
 class ProductsTableViewCell: UITableViewCell, ProductCellView {
-    
-    static let productId = "ProductsTableViewCell"
 
     let titleLabel: UILabel = {
         let label = UILabel()
@@ -40,4 +38,7 @@ class ProductsTableViewCell: UITableViewCell, ProductCellView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+extension ProductsTableViewCell: ReusableView {
 }

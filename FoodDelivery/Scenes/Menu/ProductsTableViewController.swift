@@ -16,6 +16,8 @@ enum CategorySections: String, CaseIterable {
 }
 
 class ProductsTableViewController: UITableViewController, ProductsView {
+    
+    let identifire = ProductsTableViewCell.defaultReuseIdentifier
 
     var presenter: ProductsPresenter!
     var configurator = ProductsConfiguratorImplementation()
@@ -24,28 +26,29 @@ class ProductsTableViewController: UITableViewController, ProductsView {
                     CategorySections.sushi.rawValue: ["Philadelfia", "Kalifornia", "Green dragon", "Unagi"],
                     CategorySections.salad.rawValue: ["Cezar", "Greece"],
                     CategorySections.drink.rawValue: ["Coca-Cola", "Fanta", "Sprite"]]
-    let sectionImage = #imageLiteral(resourceName: "right-arrow")
+    let sectionImage = UIImage(named: "right-arrow")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.mainGreen()
-        navigationController?.navigationBar.prefersLargeTitles = true
-        
         configurator.configure(productsTableViewController: self)
         presenter.viewDidLoad()
-        
-        tableView.register(ProductsTableViewCell.self, forCellReuseIdentifier: ProductsTableViewCell.productId)
     }
     
     func displayScreenTitle(title: String) {
         self.navigationItem.title = title
     }
     
+    func setupView() {
+        self.view.backgroundColor = UIColor.mainGreen()
+        navigationController?.navigationBar.prefersLargeTitles = true
+        tableView.register(ProductsTableViewCell.self, forCellReuseIdentifier: identifire)
+    }
+    
     // MARK: - UITableViewDataSource
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView()
-        view.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        view.backgroundColor = UIColor.mainGreen()
 
         let image = UIImageView (image: sectionImage)
         image.frame = CGRect(x: 380, y: 5, width: 24, height: 24)
@@ -75,7 +78,7 @@ class ProductsTableViewController: UITableViewController, ProductsView {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ProductsTableViewCell.productId, for: indexPath) as! ProductsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifire, for: indexPath) as! ProductsTableViewCell
         let key = CategorySections.allCases[indexPath.section].rawValue
         let values = products[key]?[indexPath.row]
         cell.titleLabel.text = values
