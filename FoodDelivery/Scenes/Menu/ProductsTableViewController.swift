@@ -12,11 +12,7 @@ class ProductsTableViewController: UITableViewController, ProductsView, Expandab
     
     var presenter: ProductsPresenter!
     var configurator = ProductsConfiguratorImplementation()
-    
-    var menuSections = [MenuSections(category: "🍔 Burger", products: ["BigMac", "Chizburger", "Gamburger", "Big Tasty", "Fishburger"], isExpanded: false),
-                        MenuSections(category: "🍣 Sushi", products: ["Philadelfia", "Kalifornia", "Green dragon", "Unagi"], isExpanded: false),
-                        MenuSections(category: "🥗 Salad", products: ["Cezar", "Greece"], isExpanded: false),
-                        MenuSections(category: "🥤 Drinks", products: ["Coca-Cola", "Fanta", "Sprite"], isExpanded: false)]
+    var menuSections: [MenuSection] = [.fixture, .fixture, .fixture, .fixture]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +33,6 @@ class ProductsTableViewController: UITableViewController, ProductsView, Expandab
     }
     
     func toggleSection(header: ProductsSectionHFV, section: Int) {
-        print("Section: ", section)
         menuSections[section].isExpanded = !menuSections[section].isExpanded
         tableView.beginUpdates()
         for i in 0..<menuSections[section].products.count {
@@ -50,7 +45,7 @@ class ProductsTableViewController: UITableViewController, ProductsView, Expandab
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(ProductsSectionHFV.self)
-        headerView.customInit(title: menuSections[section].category, section: section, delegate: self)
+        headerView.customInit(title: menuSections[section].category.name, section: section, delegate: self)
         return headerView
     }
     
@@ -86,7 +81,7 @@ class ProductsTableViewController: UITableViewController, ProductsView, Expandab
         guard menuSections[indexPath.section].products.indices.contains(indexPath.row) else {
             return UITableViewCell()
         }
-        let product = menuSections[indexPath.section].products[indexPath.row]
+        let product = menuSections[indexPath.section].products[indexPath.row].title
         cell.titleLabel.text = product
         return cell
     }
