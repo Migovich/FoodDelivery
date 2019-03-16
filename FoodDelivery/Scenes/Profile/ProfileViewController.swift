@@ -16,7 +16,7 @@ class ProfileViewController: UIViewController {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
         iv.clipsToBounds = true
-        iv.image = #imageLiteral(resourceName: "pikachu")
+        iv.image = UIImage(named: "pikachu")
         return iv
     }()
     

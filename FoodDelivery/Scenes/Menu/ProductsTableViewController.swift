@@ -8,25 +8,15 @@
 
 import UIKit
 
-enum CategorySections: String, CaseIterable {
-    case burger
-    case sushi
-    case salad
-    case drink
-}
-
-class ProductsTableViewController: UITableViewController, ProductsView {
+class ProductsTableViewController: UITableViewController, ProductsView, ExpandableHFVDelegate {
     
-    let identifire = ProductsTableViewCell.defaultReuseIdentifier
-
     var presenter: ProductsPresenter!
     var configurator = ProductsConfiguratorImplementation()
     
-    var products = [CategorySections.burger.rawValue: ["BigMac", "Chizburger", "Gamburger", "Big Tasty", "Fishburger"],
-                    CategorySections.sushi.rawValue: ["Philadelfia", "Kalifornia", "Green dragon", "Unagi"],
-                    CategorySections.salad.rawValue: ["Cezar", "Greece"],
-                    CategorySections.drink.rawValue: ["Coca-Cola", "Fanta", "Sprite"]]
-    let sectionImage = UIImage(named: "right-arrow")
+    var menuSections = [MenuSections(category: "🍔 Burger", products: ["BigMac", "Chizburger", "Gamburger", "Big Tasty", "Fishburger"], isExpanded: false),
+                        MenuSections(category: "🍣 Sushi", products: ["Philadelfia", "Kalifornia", "Green dragon", "Unagi"], isExpanded: false),
+                        MenuSections(category: "🥗 Salad", products: ["Cezar", "Greece"], isExpanded: false),
+                        MenuSections(category: "🥤 Drinks", products: ["Coca-Cola", "Fanta", "Sprite"], isExpanded: false)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,47 +32,62 @@ class ProductsTableViewController: UITableViewController, ProductsView {
     func setupView() {
         self.view.backgroundColor = UIColor.mainGreen()
         navigationController?.navigationBar.prefersLargeTitles = true
-        tableView.register(ProductsTableViewCell.self, forCellReuseIdentifier: identifire)
+        tableView.register(ProductsTableViewCell.self)
+        tableView.register(ProductsSectionHFV.self)
+    }
+    
+    func toggleSection(header: ProductsSectionHFV, section: Int) {
+        print("Section: ", section)
+        menuSections[section].isExpanded = !menuSections[section].isExpanded
+        tableView.beginUpdates()
+        for i in 0..<menuSections[section].products.count {
+            tableView.reloadRows(at: [IndexPath(row: i, section: section)], with: .automatic)
+        }
+        tableView.endUpdates()
     }
     
     // MARK: - UITableViewDataSource
+    
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView()
-        view.backgroundColor = UIColor.mainGreen()
-
-        let image = UIImageView (image: sectionImage)
-        image.frame = CGRect(x: 380, y: 5, width: 24, height: 24)
-        view.addSubview(image)
-        
-        let label = UILabel()
-        label.text = CategorySections.allCases[section].rawValue.capitalized
-        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        label.frame = CGRect(x: 5, y: 0, width: 100, height: 35)
-        view.addSubview(label)
-        
-        return view
+        let headerView = tableView.dequeueReusableHeaderFooterView(ProductsSectionHFV.self)
+        headerView.customInit(title: menuSections[section].category, section: section, delegate: self)
+        return headerView
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 36
+        return 46
     }
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if (menuSections[indexPath.section].isExpanded) {
+            return 40
+        } else {
+            return 0
+        }
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return CategorySections.allCases.count
+        return menuSections.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let key = CategorySections.allCases[section].rawValue
-        guard let values = products[key] else { return 0 }
-        return values.count
+        guard menuSections.indices.contains(section) else {
+            return 0
+        }
+        return menuSections[section].products.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: identifire, for: indexPath) as! ProductsTableViewCell
-        let key = CategorySections.allCases[indexPath.section].rawValue
-        let values = products[key]?[indexPath.row]
-        cell.titleLabel.text = values
-        //presenter.configure(cell: cell, forRow: indexPath.row)
+        guard menuSections.indices.contains(indexPath.section) else {
+            assertionFailure("Sections does not contain section at indexPath: \(indexPath)")
+            return UITableViewCell()
+        }
+        let cell: ProductsTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+        guard menuSections[indexPath.section].products.indices.contains(indexPath.row) else {
+            return UITableViewCell()
+        }
+        let product = menuSections[indexPath.section].products[indexPath.row]
+        cell.titleLabel.text = product
         return cell
     }
 }
