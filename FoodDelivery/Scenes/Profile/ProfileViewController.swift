@@ -16,28 +16,28 @@ class ProfileViewController: UIViewController {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
         iv.clipsToBounds = true
-        iv.image = UIImage(named: "pikachu")
+        iv.image = R.image.pikachu()
         return iv
     }()
     
     lazy var usernameContainerView: UIView = {
         let view = UIView()
-        return view.textContainerView(view: view, #imageLiteral(resourceName: "user"), usernameTextField)
+        return view.textContainerView(view: view, R.image.user()!, usernameTextField)
     }()
     
     lazy var phoneContainerView: UIView = {
         let view = UIView()
-        return view.textContainerView(view: view, #imageLiteral(resourceName: "phone"), phoneTextField)
+        return view.textContainerView(view: view, R.image.phone()!, phoneTextField)
     }()
     
     lazy var emailContainerView: UIView = {
         let view = UIView()
-        return view.textContainerView(view: view, #imageLiteral(resourceName: "email"), emailTextField)
+        return view.textContainerView(view: view, R.image.email()!, emailTextField)
     }()
     
     lazy var addressContainerView: UIView = {
         let view = UIView()
-        return view.textContainerView(view: view, #imageLiteral(resourceName: "address"), addressTextField)
+        return view.textContainerView(view: view, R.image.address()!, addressTextField)
     }()
     
     lazy var usernameTextField: UITextField = {
@@ -65,8 +65,8 @@ class ProfileViewController: UIViewController {
         let button = UIButton(type: .system)
         button.setTitle("SAVE", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
-        button.setTitleColor(UIColor.mainGreen(), for: .normal)
-        button.backgroundColor = .white
+        button.setTitleColor(R.color.buttonText(), for: .normal)
+        button.backgroundColor = R.color.buttonBackground()
         button.addTarget(self, action: #selector(handleSave), for: .touchUpInside)
         button.layer.cornerRadius = 5
         return button
@@ -89,7 +89,7 @@ class ProfileViewController: UIViewController {
     // MARK: - Helper Functions
     
     func configureViewComponents() {
-        view.backgroundColor = UIColor.mainGreen()
+        view.backgroundColor = R.color.mainGreen()
         navigationController?.navigationBar.isHidden = true
         
         view.addSubview(logoImageView)

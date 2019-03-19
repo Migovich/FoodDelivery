@@ -46,4 +46,15 @@ extension UITableView {
         }
         return headerFooter
     }
+    
+    //Section index
+    public func sectionIndexForHeaderView(_ view: UITableViewHeaderFooterView) -> Int? {
+        let sectionCount = numberOfSections
+        for index in 0 ..< sectionCount {
+            if headerView(forSection: index) == view {
+                return index
+            }
+        }
+        return nil
+    }
 }

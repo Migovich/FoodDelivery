@@ -16,7 +16,7 @@ class CartViewController: UIViewController, CartView {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.mainGreen()
+        self.view.backgroundColor = R.color.mainGreen()
         configurator.configure(cartViewController: self)
         presenter.viewDidLoad()
     }

@@ -38,7 +38,7 @@ class ProductsSectionHFV: UITableViewHeaderFooterView, ReusableView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.textLabel?.textColor = UIColor.white
-        self.contentView.backgroundColor = UIColor.darkGray
+        self.textLabel?.textColor = R.color.headerCellText()
+        self.contentView.backgroundColor = R.color.headerCellBackground()
     }
 }

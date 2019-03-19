@@ -10,7 +10,7 @@
 		CD049DA7223ABE00009280D5 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD049DA6223ABE00009280D5 /* ReusableView.swift */; };
 		CD049DAA223B02AF009280D5 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD049DA9223B02AF009280D5 /* UITableViewExtension.swift */; };
 		CD05C784222DDA370077041E /* ProductsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05C782222DDA370077041E /* ProductsTableViewCell.swift */; };
-		CD05C7AF22302F4B0077041E /* MenuSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05C7AE22302F4B0077041E /* MenuSections.swift */; };
+		CD05C7AF22302F4B0077041E /* MenuSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05C7AE22302F4B0077041E /* MenuSection.swift */; };
 		CD2EECC5222AE8CB00C9FFAB /* ProductsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2EECC4222AE8CB00C9FFAB /* ProductsConfigurator.swift */; };
 		CD2EECC7222AF8EE00C9FFAB /* CartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2EECC6222AF8EE00C9FFAB /* CartPresenter.swift */; };
 		CD2EECC9222AF8FA00C9FFAB /* CartViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2EECC8222AF8FA00C9FFAB /* CartViewRouter.swift */; };
@@ -22,23 +22,28 @@
 		CD2EECD5222AF99900C9FFAB /* ProductsViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2EECD4222AF99900C9FFAB /* ProductsViewRouter.swift */; };
 		CD2EECD8222AFDF300C9FFAB /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2EECD7222AFDF300C9FFAB /* ViewRouter.swift */; };
 		CD48FC0A223C20F0004095E8 /* ProductsSectionHFV.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD48FC09223C20F0004095E8 /* ProductsSectionHFV.swift */; };
-		CD48FC0C223D3B29004095E8 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD48FC0B223D3B29004095E8 /* UIColorExtension.swift */; };
 		CD6A09E1222039C20003162E /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A09E0222039C20003162E /* UIViewExtension.swift */; };
 		CD6C6CE9221F265E004C9DD0 /* ProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C6CE8221F265E004C9DD0 /* ProductsTableViewController.swift */; };
 		CD6C6CEF221F2701004C9DD0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C6CEE221F2701004C9DD0 /* ProfileViewController.swift */; };
 		CD6C6CF1221F2784004C9DD0 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C6CF0221F2784004C9DD0 /* CartViewController.swift */; };
 		CD6C6CF5221F2B6D004C9DD0 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C6CF4221F2B6D004C9DD0 /* MainTabBarViewController.swift */; };
 		CD700E7F22216DD700435D4D /* MainTabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD700E7E22216DD700435D4D /* MainTabBarPresenter.swift */; };
+		CDA670062241131100016380 /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA670052241131100016380 /* Rswift.framework */; };
+		CDA6700A2241151900016380 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA670092241151900016380 /* R.generated.swift */; };
 		CDD6C16A221D687C0005710C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD6C169221D687C0005710C /* AppDelegate.swift */; };
 		CDD6C171221D687D0005710C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDD6C170221D687D0005710C /* Assets.xcassets */; };
 		CDD6C174221D687D0005710C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDD6C172221D687D0005710C /* LaunchScreen.storyboard */; };
+		EFCDA15695AE344D87D3578B /* Pods_FoodDelivery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D4DBB26715966AE761DF626 /* Pods_FoodDelivery.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		68355C240F8D600E08837317 /* Pods-FoodDelivery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodDelivery.debug.xcconfig"; path = "Target Support Files/Pods-FoodDelivery/Pods-FoodDelivery.debug.xcconfig"; sourceTree = "<group>"; };
+		7B7F0C3A91147A949A1CE24A /* Pods-FoodDelivery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodDelivery.release.xcconfig"; path = "Target Support Files/Pods-FoodDelivery/Pods-FoodDelivery.release.xcconfig"; sourceTree = "<group>"; };
+		9D4DBB26715966AE761DF626 /* Pods_FoodDelivery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodDelivery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD049DA6223ABE00009280D5 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		CD049DA9223B02AF009280D5 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		CD05C782222DDA370077041E /* ProductsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewCell.swift; sourceTree = "<group>"; };
-		CD05C7AE22302F4B0077041E /* MenuSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSections.swift; sourceTree = "<group>"; };
+		CD05C7AE22302F4B0077041E /* MenuSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSection.swift; sourceTree = "<group>"; };
 		CD2EECC4222AE8CB00C9FFAB /* ProductsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsConfigurator.swift; sourceTree = "<group>"; };
 		CD2EECC6222AF8EE00C9FFAB /* CartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPresenter.swift; sourceTree = "<group>"; };
 		CD2EECC8222AF8FA00C9FFAB /* CartViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewRouter.swift; sourceTree = "<group>"; };
@@ -50,13 +55,14 @@
 		CD2EECD4222AF99900C9FFAB /* ProductsViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewRouter.swift; sourceTree = "<group>"; };
 		CD2EECD7222AFDF300C9FFAB /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		CD48FC09223C20F0004095E8 /* ProductsSectionHFV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsSectionHFV.swift; sourceTree = "<group>"; };
-		CD48FC0B223D3B29004095E8 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		CD6A09E0222039C20003162E /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		CD6C6CE8221F265E004C9DD0 /* ProductsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewController.swift; sourceTree = "<group>"; };
 		CD6C6CEE221F2701004C9DD0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CD6C6CF0221F2784004C9DD0 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		CD6C6CF4221F2B6D004C9DD0 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		CD700E7E22216DD700435D4D /* MainTabBarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarPresenter.swift; sourceTree = "<group>"; };
+		CDA670052241131100016380 /* Rswift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Rswift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDA670092241151900016380 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		CDD6C166221D687C0005710C /* FoodDelivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodDelivery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD6C169221D687C0005710C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDD6C170221D687D0005710C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,18 +75,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDA670062241131100016380 /* Rswift.framework in Frameworks */,
+				EFCDA15695AE344D87D3578B /* Pods_FoodDelivery.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D2F8DE71B386011ABAF2655 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CDA670052241131100016380 /* Rswift.framework */,
+				9D4DBB26715966AE761DF626 /* Pods_FoodDelivery.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CD049DA8223B0277009280D5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				CD049DA9223B02AF009280D5 /* UITableViewExtension.swift */,
 				CD6A09E0222039C20003162E /* UIViewExtension.swift */,
-				CD48FC0B223D3B29004095E8 /* UIColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -97,7 +113,7 @@
 		CD05C7AD22302F350077041E /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				CD05C7AE22302F4B0077041E /* MenuSections.swift */,
+				CD05C7AE22302F4B0077041E /* MenuSection.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -166,11 +182,21 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		CDA670082241150B00016380 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CDA670092241151900016380 /* R.generated.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		CDD6C15D221D687B0005710C = {
 			isa = PBXGroup;
 			children = (
 				CDD6C168221D687C0005710C /* FoodDelivery */,
 				CDD6C167221D687C0005710C /* Products */,
+				D4E0CFB06373DC5AD20C58CD /* Pods */,
+				7D2F8DE71B386011ABAF2655 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -185,6 +211,7 @@
 		CDD6C168221D687C0005710C /* FoodDelivery */ = {
 			isa = PBXGroup;
 			children = (
+				CDA670082241150B00016380 /* Resources */,
 				CD05C7AC22302F210077041E /* Core */,
 				CD2EECD6222AFDDD00C9FFAB /* Other */,
 				CD6C6CEA221F266D004C9DD0 /* Scenes */,
@@ -196,6 +223,15 @@
 			path = FoodDelivery;
 			sourceTree = "<group>";
 		};
+		D4E0CFB06373DC5AD20C58CD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				68355C240F8D600E08837317 /* Pods-FoodDelivery.debug.xcconfig */,
+				7B7F0C3A91147A949A1CE24A /* Pods-FoodDelivery.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -203,9 +239,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CDD6C178221D687D0005710C /* Build configuration list for PBXNativeTarget "FoodDelivery" */;
 			buildPhases = (
+				AC38BCB93E9569C643485398 /* [CP] Check Pods Manifest.lock */,
+				CDA670072241135800016380 /* RSwift */,
 				CDD6C162221D687C0005710C /* Sources */,
 				CDD6C163221D687C0005710C /* Frameworks */,
 				CDD6C164221D687C0005710C /* Resources */,
+				B7CF37A65486DB9BFB0FB412 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -261,6 +300,73 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AC38BCB93E9569C643485398 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FoodDelivery-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7CF37A65486DB9BFB0FB412 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FoodDelivery/Pods-FoodDelivery-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FoodDelivery/Pods-FoodDelivery-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CDA670072241135800016380 /* RSwift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = RSwift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CDD6C162221D687C0005710C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -270,13 +376,13 @@
 				CD2EECC9222AF8FA00C9FFAB /* CartViewRouter.swift in Sources */,
 				CD6C6CEF221F2701004C9DD0 /* ProfileViewController.swift in Sources */,
 				CD2EECC5222AE8CB00C9FFAB /* ProductsConfigurator.swift in Sources */,
-				CD48FC0C223D3B29004095E8 /* UIColorExtension.swift in Sources */,
 				CD2EECC7222AF8EE00C9FFAB /* CartPresenter.swift in Sources */,
 				CD2EECCD222AF94800C9FFAB /* ProfileConfigurator.swift in Sources */,
 				CD049DAA223B02AF009280D5 /* UITableViewExtension.swift in Sources */,
 				CD2EECCB222AF90F00C9FFAB /* CartConfigurator.swift in Sources */,
 				CD6C6CE9221F265E004C9DD0 /* ProductsTableViewController.swift in Sources */,
 				CD6C6CF5221F2B6D004C9DD0 /* MainTabBarViewController.swift in Sources */,
+				CDA6700A2241151900016380 /* R.generated.swift in Sources */,
 				CD6A09E1222039C20003162E /* UIViewExtension.swift in Sources */,
 				CD05C784222DDA370077041E /* ProductsTableViewCell.swift in Sources */,
 				CD48FC0A223C20F0004095E8 /* ProductsSectionHFV.swift in Sources */,
@@ -287,7 +393,7 @@
 				CD2EECD8222AFDF300C9FFAB /* ViewRouter.swift in Sources */,
 				CDD6C16A221D687C0005710C /* AppDelegate.swift in Sources */,
 				CD6C6CF1221F2784004C9DD0 /* CartViewController.swift in Sources */,
-				CD05C7AF22302F4B0077041E /* MenuSections.swift in Sources */,
+				CD05C7AF22302F4B0077041E /* MenuSection.swift in Sources */,
 				CD2EECCF222AF95A00C9FFAB /* ProfilePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +530,7 @@
 		};
 		CDD6C179221D687D0005710C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68355C240F8D600E08837317 /* Pods-FoodDelivery.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -442,6 +549,7 @@
 		};
 		CDD6C17A221D687D0005710C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B7F0C3A91147A949A1CE24A /* Pods-FoodDelivery.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

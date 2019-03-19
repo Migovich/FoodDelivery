@@ -10,13 +10,13 @@ import UIKit
 
 class ProductsTableViewController: UITableViewController, ProductsView, ExpandableHFVDelegate {
     
+    // MARK: - Properties
     var presenter: ProductsPresenter!
     var configurator = ProductsConfiguratorImplementation()
     var menuSections: [MenuSection] = [.fixture, .fixture, .fixture, .fixture]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configurator.configure(productsTableViewController: self)
         presenter.viewDidLoad()
     }
@@ -26,23 +26,13 @@ class ProductsTableViewController: UITableViewController, ProductsView, Expandab
     }
     
     func setupView() {
-        self.view.backgroundColor = UIColor.mainGreen()
+        self.view.backgroundColor = R.color.mainGreen()
         navigationController?.navigationBar.prefersLargeTitles = true
         tableView.register(ProductsTableViewCell.self)
         tableView.register(ProductsSectionHFV.self)
     }
     
-    func toggleSection(header: ProductsSectionHFV, section: Int) {
-        menuSections[section].isExpanded = !menuSections[section].isExpanded
-        tableView.beginUpdates()
-        for i in 0..<menuSections[section].products.count {
-            tableView.reloadRows(at: [IndexPath(row: i, section: section)], with: .automatic)
-        }
-        tableView.endUpdates()
-    }
-    
     // MARK: - UITableViewDataSource
-    
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(ProductsSectionHFV.self)
         headerView.customInit(title: menuSections[section].category.name, section: section, delegate: self)
@@ -53,7 +43,8 @@ class ProductsTableViewController: UITableViewController, ProductsView, Expandab
         return 46
     }
 
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView,
+                            heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (menuSections[indexPath.section].isExpanded) {
             return 40
         } else {
@@ -84,5 +75,14 @@ class ProductsTableViewController: UITableViewController, ProductsView, Expandab
         let product = menuSections[indexPath.section].products[indexPath.row].title
         cell.titleLabel.text = product
         return cell
+    }
+    
+    func toggleSection(header: ProductsSectionHFV, section: Int) {
+        menuSections[section].isExpanded = !menuSections[section].isExpanded
+        tableView.beginUpdates()
+        for i in 0..<menuSections[section].products.count {
+            tableView.reloadRows(at: [IndexPath(row: i, section: section)], with: .automatic)
+        }
+        tableView.endUpdates()
     }
 }
