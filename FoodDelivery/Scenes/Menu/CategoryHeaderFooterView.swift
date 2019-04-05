@@ -9,12 +9,13 @@
 import UIKit
 
 protocol ExpandableHFVDelegate {
-    func toggleSection(header: ProductsSectionHFV, section: Int)
+    func toggleSection(header: CategoryHeaderFooterView)
 }
 
-class ProductsSectionHFV: UITableViewHeaderFooterView, ReusableView {
+class CategoryHeaderFooterView: UITableViewHeaderFooterView, ReusableView, CategoryCellView
+{
+    
     var delegate: ExpandableHFVDelegate?
-    var section: Int!
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
@@ -26,19 +27,19 @@ class ProductsSectionHFV: UITableViewHeaderFooterView, ReusableView {
     }
     
     @objc func selectHeaderAction(gestureRecognizer: UITapGestureRecognizer) {
-        let cell = gestureRecognizer.view as! ProductsSectionHFV
-        delegate?.toggleSection(header: self, section: cell.section)
+        delegate?.toggleSection(header: self)
     }
     
-    func customInit(title: String, section: Int, delegate: ExpandableHFVDelegate) {
+    func display(title: String) {
         self.textLabel?.text = title
-        self.section = section
+    }
+    
+    func configure(delegate: ExpandableHFVDelegate?) {
         self.delegate = delegate
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        self.textLabel?.textColor = R.color.headerCellText()
-        self.contentView.backgroundColor = R.color.headerCellBackground()
+    func setupView() {
+        self.textLabel?.textColor = .white
+        self.contentView.backgroundColor = R.color.mainGreen()
     }
 }

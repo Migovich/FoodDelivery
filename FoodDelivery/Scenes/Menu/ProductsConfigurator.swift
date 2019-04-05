@@ -16,7 +16,13 @@ class ProductsConfiguratorImplementation: ProductsConfigurator {
     
     func configure(productsTableViewController: ProductsTableViewController) {
         
-        let presenter = ProductsPresenterImplementation(view: productsTableViewController)
+        let apiClient = ApiClientImplementation(urlSessionConfiguration: URLSessionConfiguration.default, completionHandlerQueue: OperationQueue.main)
+        
+        let apiCategoriesGateway = ApiCategoriesGatewayImplementation(apiClient: apiClient)
+        
+        let displayCategoriesUseCase = DisplayCategoriesUseCaseImplementation(categoriesGateway: apiCategoriesGateway)
+        
+        let presenter = ProductsPresenterImplementation(view: productsTableViewController, displayCategoriesUseCase: displayCategoriesUseCase)
         
         productsTableViewController.presenter = presenter
     }

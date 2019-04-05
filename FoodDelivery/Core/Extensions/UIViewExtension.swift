@@ -9,9 +9,13 @@
 import UIKit
 
 extension UIView {
-    
-    func anchor(top: NSLayoutYAxisAnchor?, left: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, right: NSLayoutXAxisAnchor?,  paddingTop: CGFloat, paddingLeft: CGFloat, paddingBottom: CGFloat, paddingRight: CGFloat, width: CGFloat, height: CGFloat) {
-        
+
+    func anchor(top: NSLayoutYAxisAnchor?, left: NSLayoutXAxisAnchor?,
+                bottom: NSLayoutYAxisAnchor?, right: NSLayoutXAxisAnchor?,
+                paddingTop: CGFloat, paddingLeft: CGFloat,
+                paddingBottom: CGFloat, paddingRight: CGFloat,
+                width: CGFloat, height: CGFloat) {
+
         translatesAutoresizingMaskIntoConstraints = false
         
         if let top = top {
@@ -56,20 +60,38 @@ extension UIView {
         let separatorView = UIView()
         separatorView.backgroundColor = UIColor(white: 1, alpha: 0.87)
         view.addSubview(separatorView)
-        separatorView.anchor(top: nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 8, paddingBottom: 0, paddingRight: 0, width: 0, height: 0.75)
-        
+        separatorView.anchor(top: nil, left: view.leftAnchor, bottom: view.bottomAnchor,
+                             right: view.rightAnchor,
+                             paddingTop: 0, paddingLeft: 8,
+                             paddingBottom: 0, paddingRight: 0,
+                             width: 0, height: 0.75)
+
         return view
     }
 }
 
 extension UITextField {
     func textField(withPlaceolder placeholder: String, isSecureTextEntry: Bool) -> UITextField {
-        let tf = UITextField()
-        tf.borderStyle = .none
-        tf.font = UIFont.systemFont(ofSize: 16)
-        tf.textColor = .white
-        tf.isSecureTextEntry = isSecureTextEntry
-        tf.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-        return tf
+        let textField = UITextField()
+        textField.borderStyle = .none
+        textField.font = UIFont.systemFont(ofSize: 16)
+        textField.textColor = .white
+        textField.isSecureTextEntry = isSecureTextEntry
+        textField.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        return textField
+    }
+}
+
+extension UIImageView {
+    func load(url: URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
     }
 }

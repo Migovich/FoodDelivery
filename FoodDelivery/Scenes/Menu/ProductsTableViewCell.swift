@@ -8,35 +8,26 @@
 
 import UIKit
 
-class ProductsTableViewCell: UITableViewCell, ProductCellView, ReusableView {
+class ProductsTableViewCell: UITableViewCell, ProductCellView, ReusableView, NibLoadableView {
 
-    let titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        label.textColor = R.color.cellText()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+    @IBOutlet weak var productImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
     
+    func display(imageURL: URL) {
+        productImageView.load(url: imageURL)
+    }
+
     func display(title: String) {
         titleLabel.text = title
     }
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        contentView.backgroundColor = R.color.cellBackground()
-        contentView.addSubview(titleLabel)
-        titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
+    func display(subtitle: String) {
+        subtitleLabel.text = subtitle
     }
     
-    override func awakeFromNib() {
-        contentView.addSubview(titleLabel)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func display(price: String) {
+        priceLabel.text = price
     }
 }

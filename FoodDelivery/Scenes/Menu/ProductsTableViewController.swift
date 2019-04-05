@@ -7,20 +7,22 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+import SDWebImage
 
 class ProductsTableViewController: UITableViewController, ProductsView, ExpandableHFVDelegate {
-    
+
     // MARK: - Properties
     var presenter: ProductsPresenter!
     var configurator = ProductsConfiguratorImplementation()
-    var menuSections: [MenuSection] = [.fixture, .fixture, .fixture, .fixture]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configurator.configure(productsTableViewController: self)
         presenter.viewDidLoad()
     }
-    
+
     func displayScreenTitle(title: String) {
         self.navigationItem.title = title
     }
@@ -29,14 +31,20 @@ class ProductsTableViewController: UITableViewController, ProductsView, Expandab
         self.view.backgroundColor = R.color.mainGreen()
         navigationController?.navigationBar.prefersLargeTitles = true
         tableView.register(ProductsTableViewCell.self)
-        tableView.register(ProductsSectionHFV.self)
+        tableView.register(CategoryHeaderFooterView.self)
     }
     
     // MARK: - UITableViewDataSource
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = tableView.dequeueReusableHeaderFooterView(ProductsSectionHFV.self)
-        headerView.customInit(title: menuSections[section].category.name, section: section, delegate: self)
+        let headerView = tableView.dequeueReusableHeaderFooterView(CategoryHeaderFooterView.self)
+        presenter.configure(header: headerView, delegate: self, section: section)
         return headerView
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if let headerView = view as? CategoryHeaderFooterView {
+            headerView.setupView()
+        }
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -45,44 +53,32 @@ class ProductsTableViewController: UITableViewController, ProductsView, Expandab
 
     override func tableView(_ tableView: UITableView,
                             heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if (menuSections[indexPath.section].isExpanded) {
-            return 40
-        } else {
-            return 0
-        }
+        return 230
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return menuSections.count
+        return presenter.numberOfSections
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard menuSections.indices.contains(section) else {
-            return 0
-        }
-        return menuSections[section].products.count
+        return presenter.numberOfRowsInSection(section: section)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard menuSections.indices.contains(indexPath.section) else {
-            assertionFailure("Sections does not contain section at indexPath: \(indexPath)")
-            return UITableViewCell()
-        }
         let cell: ProductsTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-        guard menuSections[indexPath.section].products.indices.contains(indexPath.row) else {
-            return UITableViewCell()
-        }
-        let product = menuSections[indexPath.section].products[indexPath.row].title
-        cell.titleLabel.text = product
+        presenter.configure(cell: cell, for: indexPath)
         return cell
     }
-    
-    func toggleSection(header: ProductsSectionHFV, section: Int) {
-        menuSections[section].isExpanded = !menuSections[section].isExpanded
+
+    func toggleSection(header: CategoryHeaderFooterView) {
+        guard let section = tableView.sectionIndexForHeaderView(header) else { return }
+        presenter.isExpanded(for: section)
         tableView.beginUpdates()
-        for i in 0..<menuSections[section].products.count {
-            tableView.reloadRows(at: [IndexPath(row: i, section: section)], with: .automatic)
-        }
+        tableView.reloadSections(.init(integer: section), with: .automatic)
         tableView.endUpdates()
+    }
+    
+    func refreshMenuView() {
+        tableView.reloadData()
     }
 }

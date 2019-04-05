@@ -10,22 +10,22 @@ import UIKit
 
 class MainTabBarViewController: UITabBarController {
     
-    var presenter: MainPresenter!
+    var presenter: MainPresenter?
     
     private let mainVC = ProductsTableViewController()
     private let cartVC = CartViewController()
     private let profileVC = ProfileViewController()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewControllers = [setupController(vc: mainVC,    image: "menu",    title: "Menu"),
-                           setupController(vc: cartVC,    image: "cart",    title: "Cart"),
-                           setupController(vc: profileVC, image: "profile", title: "Profile")]
+        viewControllers = [setupController(viewController: mainVC, image: "menu", title: "Menu"),
+                           setupController(viewController: cartVC, image: "cart", title: "Cart"),
+                           setupController(viewController: profileVC, image: "profile", title: "Profile")]
     }
     
-    func setupController(vc: UIViewController, image: String, title: String) -> UINavigationController {
+    func setupController(viewController: UIViewController, image: String, title: String) -> UINavigationController {
         
-        let recentVC = UINavigationController(rootViewController: vc)
+        let recentVC = UINavigationController(rootViewController: viewController)
         recentVC.tabBarItem.image = UIImage(named: image)
         recentVC.tabBarItem.title = title
         
