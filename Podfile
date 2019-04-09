@@ -9,4 +9,5 @@ target 'FoodDelivery' do
 	pod 'Alamofire'
 	pod 'SwiftyJSON'
 	pod 'SDWebImage'
+	pod 'Kingfisher'
 end

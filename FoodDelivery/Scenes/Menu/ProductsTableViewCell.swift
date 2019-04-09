@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ProductsTableViewCell: UITableViewCell, ProductCellView, ReusableView, NibLoadableView {
 
@@ -14,9 +15,15 @@ class ProductsTableViewCell: UITableViewCell, ProductCellView, ReusableView, Nib
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var pcsCountView: UIView!
+    @IBOutlet weak var addToCartButton: UIButton!
+    
+    @IBAction func addToCartButton(_ sender: Any) {
+        
+    }
     
     func display(imageURL: URL) {
-        productImageView.load(url: imageURL)
+        productImageView.kf.setImage(with: imageURL)
     }
 
     func display(title: String) {

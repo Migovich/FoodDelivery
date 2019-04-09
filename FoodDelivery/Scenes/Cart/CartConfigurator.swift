@@ -9,12 +9,12 @@
 import Foundation
 
 protocol CartConfigurator {
-    func configure(cartViewController: CartViewController)
+    func configure(cartViewController: CartTableViewController)
 }
 
 class CartConfiguratorImplementation: CartConfigurator {
     
-    func configure(cartViewController: CartViewController) {
+    func configure(cartViewController: CartTableViewController) {
         
         let presenter = CartPresenterImplementation(view: cartViewController)
         

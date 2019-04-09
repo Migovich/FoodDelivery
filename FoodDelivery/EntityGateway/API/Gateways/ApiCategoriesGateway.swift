@@ -23,19 +23,6 @@ class ApiCategoriesGatewayImplementation: ApiCategoriesGateway {
     
     // MARK: - ApiCategoriesGateway
     
-//    func fetchCategories(completionHandler: @escaping (Result<[MenuSection]>) -> Void) {
-//        let categoriesApiRequest = CategoriesApiRequest()
-//        apiClient.execute(request: categoriesApiRequest) { (result: Result<ApiResponse<[ApiCategoryResponse]>>) in
-//            switch result {
-//            case let .success(response):
-//                let categories = response.entity.map { return $0.categories }
-//                completionHandler(.success(categories))
-//            case let .failure(error):
-//                completionHandler(.failure(error))
-//            }
-//        }
-//    }
-    
     func fetchCategories(completionHandler: @escaping (_ result: Result<[MenuSection]>) -> Void) {
         DispatchQueue.main.async {
             // TODO: Read about .validate

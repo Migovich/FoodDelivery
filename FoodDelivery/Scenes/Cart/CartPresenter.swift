@@ -10,6 +10,7 @@ import Foundation
 
 protocol CartView: class {
     func displayScreenTitle(title: String)
+    func setupView()
 }
 
 protocol CartPresenter {
@@ -25,5 +26,6 @@ class CartPresenterImplementation: CartPresenter {
     
     func viewDidLoad() {
         view?.displayScreenTitle(title: "Cart")
+        view?.setupView()
     }
 }

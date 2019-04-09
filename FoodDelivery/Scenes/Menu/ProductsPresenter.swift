@@ -20,6 +20,7 @@ protocol ProductCellView {
     func display(title: String)
     func display(subtitle: String)
     func display(price: String)
+    
 }
 
 protocol CategoryCellView {
@@ -69,7 +70,6 @@ class ProductsPresenterImplementation: ProductsPresenter {
         //TODO: transfer view setup to configure func
         view?.displayScreenTitle(title: "Menu")
         view?.setupView()
-        func viewDidLoad() {
             self.displayCategoriesUseCase.displayCategories { (result) in
                 switch result {
                 case let .success(menuSections):
@@ -78,12 +78,10 @@ class ProductsPresenterImplementation: ProductsPresenter {
                     print(error.localizedDescription)
                 }
             }
-        }
     }
 
     func configure(cell: ProductCellView, for indexPath: IndexPath) {
         let product = menuSections[indexPath.section].category.products[indexPath.row]
-    
         cell.display(imageURL: product.imageURL!)
         cell.display(title: product.title)
         cell.display(subtitle: product.subtitle)
@@ -99,5 +97,4 @@ class ProductsPresenterImplementation: ProductsPresenter {
         self.menuSections = menuSections
         view?.refreshMenuView()
     }
-    
 }

@@ -7,9 +7,6 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
-import SDWebImage
 
 class ProductsTableViewController: UITableViewController, ProductsView, ExpandableHFVDelegate {
 
@@ -69,7 +66,7 @@ class ProductsTableViewController: UITableViewController, ProductsView, Expandab
         presenter.configure(cell: cell, for: indexPath)
         return cell
     }
-
+    
     func toggleSection(header: CategoryHeaderFooterView) {
         guard let section = tableView.sectionIndexForHeaderView(header) else { return }
         presenter.isExpanded(for: section)

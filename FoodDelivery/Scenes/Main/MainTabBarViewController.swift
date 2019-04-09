@@ -13,7 +13,7 @@ class MainTabBarViewController: UITabBarController {
     var presenter: MainPresenter?
     
     private let mainVC = ProductsTableViewController()
-    private let cartVC = CartViewController()
+    private let cartVC = CartTableViewController()
     private let profileVC = ProfileViewController()
     
     override func viewDidLoad() {
