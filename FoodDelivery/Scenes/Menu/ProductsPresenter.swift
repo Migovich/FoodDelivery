@@ -35,6 +35,7 @@ protocol ProductsPresenter {
     func viewDidLoad()
     func configure(cell: ProductCellView, for indexPath: IndexPath)
     func configure(header: CategoryHeaderFooterView, delegate: ExpandableHFVDelegate?, section: Int)
+    func addButtonPressed()
 }
 
 class ProductsPresenterImplementation: ProductsPresenter {
@@ -97,4 +98,8 @@ class ProductsPresenterImplementation: ProductsPresenter {
         self.menuSections = menuSections
         view?.refreshMenuView()
     }
+    
+    func addButtonPressed() {
+    }
+    
 }

@@ -17,9 +17,31 @@ class ProductsTableViewCell: UITableViewCell, ProductCellView, ReusableView, Nib
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var pcsCountView: UIView!
     @IBOutlet weak var addToCartButton: UIButton!
+    @IBOutlet weak var plusButton: UIButton!
+    @IBOutlet weak var minusButton: UIButton!
+    @IBOutlet weak var pcsCountLabel: UILabel!
+    var counter: Int = 0
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
     
     @IBAction func addToCartButton(_ sender: Any) {
-        
+        addToCartButton.isHidden = !addToCartButton.isHidden
+        counter += 1
+        pcsCountLabel.text = String(counter)
+    }
+    @IBAction func plusButton(_ sender: Any) {
+        counter += 1
+        pcsCountLabel.text = String(counter)
+    }
+    
+    @IBAction func minusButton(_ sender: Any) {
+        if counter <= 1 {
+            addToCartButton.isHidden = !addToCartButton.isHidden
+        }
+        counter -= 1
+        pcsCountLabel.text = String(counter)
     }
     
     func display(imageURL: URL) {

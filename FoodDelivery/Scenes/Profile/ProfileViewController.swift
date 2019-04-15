@@ -92,7 +92,11 @@ class ProfileViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
         
         view.addSubview(logoImageView)
-        logoImageView.anchor(top: view.topAnchor, left: nil, bottom: nil, right: nil, paddingTop: 100, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 150, height: 150)
+        logoImageView.anchor(top: view.topAnchor, left: nil,
+                             bottom: nil, right: nil,
+                             paddingTop: 100, paddingLeft: 0,
+                             paddingBottom: 0, paddingRight: 0,
+                             width: 150, height: 150)
         logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         view.addSubview(usernameContainerView)

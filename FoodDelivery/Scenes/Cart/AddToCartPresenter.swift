@@ -24,6 +24,7 @@ class AddProductPresenterImplementation: AddProductPresenter {
     fileprivate weak var view: AddProductView?
     fileprivate var addProductUseCase: AddToCartUseCase
     fileprivate weak var delegate: AddProductPresenterDelegate?
+    var products = [Product]()
     
     init(view: AddProductView,
          addProductUseCase: AddToCartUseCase,

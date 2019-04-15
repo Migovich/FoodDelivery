@@ -43,6 +43,7 @@
 		CDD6C174221D687D0005710C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDD6C172221D687D0005710C /* LaunchScreen.storyboard */; };
 		CDDE0BB6224A92A900EA0D85 /* ApiCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDE0BB5224A92A900EA0D85 /* ApiCategory.swift */; };
 		CDDE0BB8224A9C6300EA0D85 /* ApiCategoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDE0BB7224A9C6300EA0D85 /* ApiCategoryResponse.swift */; };
+		CDE3789E226212720037CD35 /* CounterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE3789D226212720037CD35 /* CounterButton.swift */; };
 		CDFEC58F224E5FDA0058B1C2 /* DisplayMenuCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFEC58E224E5FDA0058B1C2 /* DisplayMenuCategories.swift */; };
 		CDFEC592224E61510058B1C2 /* CategoriesGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFEC591224E61510058B1C2 /* CategoriesGateway.swift */; };
 		CDFEC594224E62410058B1C2 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFEC593224E62410058B1C2 /* Result.swift */; };
@@ -94,6 +95,7 @@
 		CDD6C175221D687D0005710C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDDE0BB5224A92A900EA0D85 /* ApiCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCategory.swift; sourceTree = "<group>"; };
 		CDDE0BB7224A9C6300EA0D85 /* ApiCategoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCategoryResponse.swift; sourceTree = "<group>"; };
+		CDE3789D226212720037CD35 /* CounterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterButton.swift; sourceTree = "<group>"; };
 		CDFEC58E224E5FDA0058B1C2 /* DisplayMenuCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayMenuCategories.swift; sourceTree = "<group>"; };
 		CDFEC591224E61510058B1C2 /* CategoriesGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesGateway.swift; sourceTree = "<group>"; };
 		CDFEC593224E62410058B1C2 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -167,10 +169,10 @@
 		CD6C6CEA221F266D004C9DD0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				CD700E7D22216D9000435D4D /* Main */,
 				CD6C6CED221F26BE004C9DD0 /* Cart */,
-				CD6C6CEC221F26A8004C9DD0 /* Profile */,
 				CD6C6CEB221F2696004C9DD0 /* Menu */,
+				CD700E7D22216D9000435D4D /* Main */,
+				CD6C6CEC221F26A8004C9DD0 /* Profile */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -185,6 +187,7 @@
 				CD05C782222DDA370077041E /* ProductsTableViewCell.swift */,
 				CDA6703C22467D2000016380 /* ProductsTableViewCell.xib */,
 				CD48FC09223C20F0004095E8 /* CategoryHeaderFooterView.swift */,
+				CDE3789D226212720037CD35 /* CounterButton.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -435,8 +438,6 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -445,8 +446,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -489,7 +488,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint --config $SRCROOT/.swiftlint.yml\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -528,6 +527,7 @@
 				CD880AD0225D4B6400548929 /* AddToCart.swift in Sources */,
 				CD2EECD3222AF98700C9FFAB /* ProductsPresenter.swift in Sources */,
 				CD700E7F22216DD700435D4D /* MainTabBarPresenter.swift in Sources */,
+				CDE3789E226212720037CD35 /* CounterButton.swift in Sources */,
 				CDFEC594224E62410058B1C2 /* Result.swift in Sources */,
 				CD2EECD8222AFDF300C9FFAB /* ViewRouter.swift in Sources */,
 				CDD6C16A221D687C0005710C /* AppDelegate.swift in Sources */,

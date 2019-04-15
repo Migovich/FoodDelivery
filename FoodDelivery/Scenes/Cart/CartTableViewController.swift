@@ -12,7 +12,6 @@ class CartTableViewController: UITableViewController, CartView {
     
     var presenter: CartPresenter!
     var configurator = CartConfiguratorImplementation()
-    var products = [Product]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +43,7 @@ class CartTableViewController: UITableViewController, CartView {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return products.count
+        return 5
     }
 
     /*

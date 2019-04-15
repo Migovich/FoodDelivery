@@ -45,72 +45,79 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zNL-fT-uaS">
-                        <rect key="frame" x="197" y="155" width="107" height="35"/>
+                        <rect key="frame" x="215" y="160.5" width="100" height="35"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWM-Fm-dyf">
-                                <rect key="frame" x="64" y="5.5" width="30" height="24"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWM-Fm-dyf" customClass="CounterButton" customModule="FoodDelivery" customModuleProvider="target">
+                                <rect key="frame" x="63" y="5.5" width="24" height="24"/>
                                 <color key="backgroundColor" name="MainGreen"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="24" id="Ktp-Kz-gWf"/>
-                                    <constraint firstAttribute="width" constant="24" id="LjG-ZU-6hA"/>
-                                    <constraint firstAttribute="height" constant="24" id="ZbM-Ju-EAz"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="t1X-UY-P5U"/>
+                                    <constraint firstAttribute="height" constant="24" id="MXl-7o-VOP"/>
+                                    <constraint firstAttribute="width" constant="24" id="YdM-UW-R5E"/>
                                 </constraints>
-                                <state key="normal" title="-">
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
+                                <state key="normal" title="⎯">
                                     <color key="titleColor" name="ButtonBackground"/>
                                 </state>
+                                <connections>
+                                    <action selector="minusButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="uk6-hQ-OcK"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cS0-DH-SSu">
-                                <rect key="frame" x="13" y="5.5" width="30" height="24"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cS0-DH-SSu" customClass="CounterButton" customModule="FoodDelivery" customModuleProvider="target">
+                                <rect key="frame" x="13" y="5.5" width="24" height="24"/>
                                 <color key="backgroundColor" name="MainGreen"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="8X8-no-8Xm"/>
-                                    <constraint firstAttribute="height" constant="24" id="BnW-R2-3EI"/>
-                                    <constraint firstAttribute="width" constant="24" id="h1i-sQ-nR1"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="24" id="v8Q-ml-Vr9"/>
+                                    <constraint firstAttribute="width" constant="24" id="4Sq-Az-8vN"/>
+                                    <constraint firstAttribute="height" constant="24" id="qSV-9h-jOF"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
                                 <state key="normal" title="+">
                                     <color key="titleColor" name="ButtonBackground"/>
                                 </state>
+                                <connections>
+                                    <action selector="plusButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Fil-2j-Q6d"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfl-nd-30T">
-                                <rect key="frame" x="48" y="7" width="11" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="44" y="5.5" width="12.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P48-u0-gmw">
-                                <rect key="frame" x="0.0" y="-5" width="107" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="ButtonBackground"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="ADD TO CART">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="addToCartButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="yE7-Ih-FFS"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="35" id="A1i-2O-hAY"/>
-                            <constraint firstItem="sfl-nd-30T" firstAttribute="centerY" secondItem="zNL-fT-uaS" secondAttribute="centerY" id="V71-db-tu3"/>
-                            <constraint firstItem="cS0-DH-SSu" firstAttribute="centerY" secondItem="zNL-fT-uaS" secondAttribute="centerY" id="VZg-vh-Rtp"/>
-                            <constraint firstItem="cWM-Fm-dyf" firstAttribute="centerY" secondItem="zNL-fT-uaS" secondAttribute="centerY" id="tp0-8E-fXe"/>
-                            <constraint firstAttribute="width" constant="107" id="wtL-oV-lna"/>
-                            <constraint firstItem="sfl-nd-30T" firstAttribute="centerX" secondItem="zNL-fT-uaS" secondAttribute="centerX" id="yoJ-Gx-M4v"/>
+                            <constraint firstItem="cS0-DH-SSu" firstAttribute="leading" secondItem="zNL-fT-uaS" secondAttribute="leading" constant="13" id="M76-ts-cZU"/>
+                            <constraint firstItem="sfl-nd-30T" firstAttribute="centerX" secondItem="zNL-fT-uaS" secondAttribute="centerX" id="aSx-Bh-wJ3"/>
+                            <constraint firstAttribute="height" constant="35" id="hYv-cO-qfX"/>
+                            <constraint firstAttribute="trailing" secondItem="cWM-Fm-dyf" secondAttribute="trailing" constant="13" id="hoB-Po-zlP"/>
+                            <constraint firstItem="sfl-nd-30T" firstAttribute="centerY" secondItem="zNL-fT-uaS" secondAttribute="centerY" id="m2h-fB-CcE"/>
+                            <constraint firstItem="cS0-DH-SSu" firstAttribute="top" secondItem="zNL-fT-uaS" secondAttribute="top" constant="5.5" id="sW0-Ea-KIg"/>
+                            <constraint firstItem="cWM-Fm-dyf" firstAttribute="top" secondItem="zNL-fT-uaS" secondAttribute="top" constant="5.5" id="u1T-aS-eHy"/>
+                            <constraint firstAttribute="width" constant="100" id="zth-Hp-IAf"/>
                         </constraints>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P48-u0-gmw">
+                        <rect key="frame" x="217" y="161.5" width="93" height="29"/>
+                        <color key="backgroundColor" name="ButtonBackground"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal" title="ADD TO CART">
+                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </state>
+                        <connections>
+                            <action selector="addToCartButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="yE7-Ih-FFS"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="zNL-fT-uaS" secondAttribute="trailing" constant="5" id="2iM-ny-2CD"/>
                     <constraint firstItem="4DW-2y-bC3" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="30v-JB-AF2"/>
                     <constraint firstAttribute="bottom" secondItem="p7q-YB-TQb" secondAttribute="bottom" constant="5" id="6JL-Tb-KzT"/>
-                    <constraint firstItem="zNL-fT-uaS" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="AFp-b7-MgZ"/>
+                    <constraint firstAttribute="bottom" secondItem="P48-u0-gmw" secondAttribute="bottom" constant="10" id="Be9-tB-FYF"/>
                     <constraint firstAttribute="trailing" secondItem="4DW-2y-bC3" secondAttribute="trailing" id="IbL-oH-qYj"/>
                     <constraint firstItem="fdg-Se-FL7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="KFf-j4-TfV"/>
-                    <constraint firstItem="zNL-fT-uaS" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="NpX-wE-8YM"/>
+                    <constraint firstAttribute="bottom" secondItem="zNL-fT-uaS" secondAttribute="bottom" constant="5" id="bVz-Oc-RDr"/>
                     <constraint firstItem="4DW-2y-bC3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="fcm-hj-fQM"/>
+                    <constraint firstAttribute="trailing" secondItem="P48-u0-gmw" secondAttribute="trailing" constant="10" id="feV-66-Msv"/>
                     <constraint firstItem="sKr-Ju-Bfm" firstAttribute="top" secondItem="fdg-Se-FL7" secondAttribute="bottom" constant="5" id="gPe-ae-vBe"/>
                     <constraint firstAttribute="trailingMargin" secondItem="sKr-Ju-Bfm" secondAttribute="trailing" constant="5" id="ltl-Wm-B7u"/>
                     <constraint firstItem="p7q-YB-TQb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="pt8-tS-qpo"/>
@@ -122,7 +129,10 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="addToCartButton" destination="P48-u0-gmw" id="fd8-Td-jbh"/>
+                <outlet property="minusButton" destination="cWM-Fm-dyf" id="FBe-lN-RF9"/>
+                <outlet property="pcsCountLabel" destination="sfl-nd-30T" id="84w-BS-iYk"/>
                 <outlet property="pcsCountView" destination="zNL-fT-uaS" id="Fle-U7-rud"/>
+                <outlet property="plusButton" destination="cS0-DH-SSu" id="dHn-qM-Fsj"/>
                 <outlet property="priceLabel" destination="p7q-YB-TQb" id="jlX-57-3EG"/>
                 <outlet property="productImageView" destination="4DW-2y-bC3" id="qvz-gG-xni"/>
                 <outlet property="subtitleLabel" destination="sKr-Ju-Bfm" id="TW6-8B-7aP"/>
