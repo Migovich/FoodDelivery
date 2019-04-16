@@ -13,7 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="201" id="KGk-i7-Jjw" customClass="ProductsTableViewCell" customModule="FoodDelivery" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="201" id="KGk-i7-Jjw" customClass="ProductTableViewCell" customModule="FoodDelivery" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="201"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -47,35 +47,27 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zNL-fT-uaS">
                         <rect key="frame" x="215" y="160.5" width="100" height="35"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWM-Fm-dyf" customClass="CounterButton" customModule="FoodDelivery" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWM-Fm-dyf" customClass="CounterButton" customModule="FoodDelivery" customModuleProvider="target">
                                 <rect key="frame" x="63" y="5.5" width="24" height="24"/>
                                 <color key="backgroundColor" name="MainGreen"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="MXl-7o-VOP"/>
                                     <constraint firstAttribute="width" constant="24" id="YdM-UW-R5E"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
-                                <state key="normal" title="⎯">
+                                <state key="normal" title="-">
                                     <color key="titleColor" name="ButtonBackground"/>
                                 </state>
-                                <connections>
-                                    <action selector="minusButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="uk6-hQ-OcK"/>
-                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cS0-DH-SSu" customClass="CounterButton" customModule="FoodDelivery" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cS0-DH-SSu" customClass="CounterButton" customModule="FoodDelivery" customModuleProvider="target">
                                 <rect key="frame" x="13" y="5.5" width="24" height="24"/>
                                 <color key="backgroundColor" name="MainGreen"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="4Sq-Az-8vN"/>
                                     <constraint firstAttribute="height" constant="24" id="qSV-9h-jOF"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
                                 <state key="normal" title="+">
                                     <color key="titleColor" name="ButtonBackground"/>
                                 </state>
-                                <connections>
-                                    <action selector="plusButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Fil-2j-Q6d"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfl-nd-30T">
                                 <rect key="frame" x="44" y="5.5" width="12.5" height="24"/>
@@ -129,10 +121,6 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="addToCartButton" destination="P48-u0-gmw" id="fd8-Td-jbh"/>
-                <outlet property="minusButton" destination="cWM-Fm-dyf" id="FBe-lN-RF9"/>
-                <outlet property="pcsCountLabel" destination="sfl-nd-30T" id="84w-BS-iYk"/>
-                <outlet property="pcsCountView" destination="zNL-fT-uaS" id="Fle-U7-rud"/>
-                <outlet property="plusButton" destination="cS0-DH-SSu" id="dHn-qM-Fsj"/>
                 <outlet property="priceLabel" destination="p7q-YB-TQb" id="jlX-57-3EG"/>
                 <outlet property="productImageView" destination="4DW-2y-bC3" id="qvz-gG-xni"/>
                 <outlet property="subtitleLabel" destination="sKr-Ju-Bfm" id="TW6-8B-7aP"/>

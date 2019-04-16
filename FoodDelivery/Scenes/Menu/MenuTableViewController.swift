@@ -8,27 +8,16 @@
 
 import UIKit
 
-class ProductsTableViewController: UITableViewController, ProductsView, ExpandableHFVDelegate {
-
+class MenuTableViewController: UITableViewController {
+    
     // MARK: - Properties
-    var presenter: ProductsPresenter!
-    var configurator = ProductsConfiguratorImplementation()
+    var presenter: MenuPresenter!
+    var configurator = MenuConfiguratorImplementation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configurator.configure(productsTableViewController: self)
         presenter.viewDidLoad()
-    }
-
-    func displayScreenTitle(title: String) {
-        self.navigationItem.title = title
-    }
-    
-    func setupView() {
-        self.view.backgroundColor = R.color.mainGreen()
-        navigationController?.navigationBar.prefersLargeTitles = true
-        tableView.register(ProductsTableViewCell.self)
-        tableView.register(CategoryHeaderFooterView.self)
     }
     
     // MARK: - UITableViewDataSource
@@ -62,17 +51,40 @@ class ProductsTableViewController: UITableViewController, ProductsView, Expandab
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: ProductsTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+        let cell: ProductTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         presenter.configure(cell: cell, for: indexPath)
+        cell.delegate = self
         return cell
     }
-    
-    func toggleSection(header: CategoryHeaderFooterView) {
-        guard let section = tableView.sectionIndexForHeaderView(header) else { return }
+}
+
+extension MenuTableViewController: ProductTableViewCellDelegate {
+    func addToCartButtonTapped(_ sender: ProductTableViewCell) {
+        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
+        print(tappedIndexPath)
+    }
+}
+
+extension MenuTableViewController: ExpandableHFVDelegate {
+    func toggleSection(_ sender: CategoryHeaderFooterView) {
+        guard let section = tableView.sectionIndexForHeaderView(for: sender) else { return }
         presenter.isExpanded(for: section)
         tableView.beginUpdates()
         tableView.reloadSections(.init(integer: section), with: .automatic)
         tableView.endUpdates()
+    }
+}
+
+extension MenuTableViewController: MenuView {
+    func displayScreenTitle(title: String) {
+        self.navigationItem.title = title
+    }
+    
+    func setupView() {
+        self.view.backgroundColor = R.color.mainGreen()
+        navigationController?.navigationBar.prefersLargeTitles = true
+        tableView.register(ProductTableViewCell.self)
+        tableView.register(CategoryHeaderFooterView.self)
     }
     
     func refreshMenuView() {

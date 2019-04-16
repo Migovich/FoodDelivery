@@ -18,32 +18,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = MainTabBarViewController()
         self.window?.makeKeyAndVisible()
-        print(#function)
+        //print(#function)
         return true
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
         //Собирается стать неактивным
-        print(#function)
+        //print(#function)
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
         //Стало неактивным
-        print(#function)
+        //print(#function)
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
         //Собирается вернутся на передний план
-        print(#function)
+        //print(#function)
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         //Стало активным
-        print(#function)
+        //print(#function)
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
         //Завершило работу
-        print(#function)
+        //print(#function)
     }
 }

@@ -8,11 +8,10 @@
 
 import Foundation
 
-protocol ProductsView: class {
+protocol MenuView: class {
     func displayScreenTitle(title: String)
-    //func displayMenuSectionsRetrievalError(title: String, message: String)
-    func refreshMenuView()
     func setupView()
+    func refreshMenuView()
 }
 
 protocol ProductCellView {
@@ -20,7 +19,6 @@ protocol ProductCellView {
     func display(title: String)
     func display(subtitle: String)
     func display(price: String)
-    
 }
 
 protocol CategoryCellView {
@@ -28,19 +26,18 @@ protocol CategoryCellView {
     func setupView()
 }
 
-protocol ProductsPresenter {
+protocol MenuPresenter {
     var numberOfSections: Int { get }
     func isExpanded(for section: Int)
     func numberOfRowsInSection(section: Int) -> Int
     func viewDidLoad()
     func configure(cell: ProductCellView, for indexPath: IndexPath)
     func configure(header: CategoryHeaderFooterView, delegate: ExpandableHFVDelegate?, section: Int)
-    func addButtonPressed()
 }
 
-class ProductsPresenterImplementation: ProductsPresenter {
+class MenuPresenterImplementation: MenuPresenter {
 
-    fileprivate weak var view: ProductsView?
+    fileprivate weak var view: MenuView?
     fileprivate let displayCategoriesUseCase: DisplayCategoriesUseCase
     
     var menuSections = [MenuSection]()
@@ -61,14 +58,13 @@ class ProductsPresenterImplementation: ProductsPresenter {
         return sectionItem.isExpanded ? sectionItem.category.products.count : 0
     }
     
-    init(view: ProductsView,
+    init(view: MenuView,
          displayCategoriesUseCase: DisplayCategoriesUseCase) {
         self.view = view
         self.displayCategoriesUseCase = displayCategoriesUseCase
     }
     
     func viewDidLoad() {
-        //TODO: transfer view setup to configure func
         view?.displayScreenTitle(title: "Menu")
         view?.setupView()
             self.displayCategoriesUseCase.displayCategories { (result) in
@@ -98,8 +94,4 @@ class ProductsPresenterImplementation: ProductsPresenter {
         self.menuSections = menuSections
         view?.refreshMenuView()
     }
-    
-    func addButtonPressed() {
-    }
-    
 }

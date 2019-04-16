@@ -8,10 +8,11 @@
 
 import UIKit
 
-class CartTableViewController: UITableViewController, CartView {
+class CartTableViewController: UITableViewController {
     
     var presenter: CartPresenter!
     var configurator = CartConfiguratorImplementation()
+    var products = [Product]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,16 +25,7 @@ class CartTableViewController: UITableViewController, CartView {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         //self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
-    func displayScreenTitle(title: String) {
-        self.navigationItem.title = title
-    }
-    
-    func setupView() {
-        self.view.backgroundColor = R.color.mainGreen()
-        navigationController?.navigationBar.prefersLargeTitles = true
-        tableView.register(CartTableViewCell.self)
-    }
+
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -100,5 +92,16 @@ class CartTableViewController: UITableViewController, CartView {
         // Pass the selected object to the new view controller.
     }
     */
+}
 
+extension CartTableViewController: CartView {
+    func displayScreenTitle(title: String) {
+        self.navigationItem.title = title
+    }
+    
+    func setupView() {
+        self.view.backgroundColor = R.color.mainGreen()
+        navigationController?.navigationBar.prefersLargeTitles = true
+        tableView.register(CartTableViewCell.self)
+    }
 }

@@ -9,11 +9,10 @@
 import UIKit
 
 protocol ExpandableHFVDelegate {
-    func toggleSection(header: CategoryHeaderFooterView)
+    func toggleSection(_ sender: CategoryHeaderFooterView)
 }
 
-class CategoryHeaderFooterView: UITableViewHeaderFooterView, ReusableView, CategoryCellView
-{
+class CategoryHeaderFooterView: UITableViewHeaderFooterView, ReusableView {
     
     var delegate: ExpandableHFVDelegate?
     
@@ -27,9 +26,11 @@ class CategoryHeaderFooterView: UITableViewHeaderFooterView, ReusableView, Categ
     }
     
     @objc func selectHeaderAction(gestureRecognizer: UITapGestureRecognizer) {
-        delegate?.toggleSection(header: self)
+        delegate?.toggleSection(self)
     }
-    
+}
+
+extension CategoryHeaderFooterView: CategoryCellView {
     func display(title: String) {
         self.textLabel?.text = title
     }

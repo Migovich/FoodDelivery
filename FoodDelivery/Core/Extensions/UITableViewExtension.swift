@@ -48,7 +48,7 @@ extension UITableView {
     }
     
     //Section index
-    public func sectionIndexForHeaderView(_ view: UITableViewHeaderFooterView) -> Int? {
+    public func sectionIndexForHeaderView(for view: UITableViewHeaderFooterView) -> Int? {
         let sectionCount = numberOfSections
         for index in 0 ..< sectionCount {
             if headerView(forSection: index) == view {

@@ -39,7 +39,7 @@ class ApiCategoriesGatewayImplementation: ApiCategoriesGateway {
                             completionHandler(Result.success(menuSections))
                             //self?.menuSections = menuSections
                             //self?.tableView.reloadData()
-                            print(menuSections)
+                            //print(menuSections)
                         } catch {
                             print(error.localizedDescription)
                         }

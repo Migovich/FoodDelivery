@@ -9,45 +9,34 @@
 import UIKit
 import Kingfisher
 
-class ProductsTableViewCell: UITableViewCell, ProductCellView, ReusableView, NibLoadableView {
+protocol ProductTableViewCellDelegate: class {
+    func addToCartButtonTapped(_ sender: ProductTableViewCell)
+}
+
+class ProductTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
 
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var pcsCountView: UIView!
     @IBOutlet weak var addToCartButton: UIButton!
-    @IBOutlet weak var plusButton: UIButton!
-    @IBOutlet weak var minusButton: UIButton!
-    @IBOutlet weak var pcsCountLabel: UILabel!
-    var counter: Int = 0
+    
+    weak var delegate: ProductTableViewCellDelegate?
     
     override func layoutSubviews() {
         super.layoutSubviews()
     }
     
     @IBAction func addToCartButton(_ sender: Any) {
-        addToCartButton.isHidden = !addToCartButton.isHidden
-        counter += 1
-        pcsCountLabel.text = String(counter)
+        delegate?.addToCartButtonTapped(self)
     }
-    @IBAction func plusButton(_ sender: Any) {
-        counter += 1
-        pcsCountLabel.text = String(counter)
-    }
-    
-    @IBAction func minusButton(_ sender: Any) {
-        if counter <= 1 {
-            addToCartButton.isHidden = !addToCartButton.isHidden
-        }
-        counter -= 1
-        pcsCountLabel.text = String(counter)
-    }
-    
+}
+
+extension ProductTableViewCell: ProductCellView {
     func display(imageURL: URL) {
         productImageView.kf.setImage(with: imageURL)
     }
-
+    
     func display(title: String) {
         titleLabel.text = title
     }

@@ -8,13 +8,13 @@
 
 import Foundation
 
-protocol ProductsConfigurator {
-    func configure(productsTableViewController: ProductsTableViewController)
+protocol MenuConfigurator {
+    func configure(productsTableViewController: MenuTableViewController)
 }
 
-class ProductsConfiguratorImplementation: ProductsConfigurator {
+class MenuConfiguratorImplementation: MenuConfigurator {
     
-    func configure(productsTableViewController: ProductsTableViewController) {
+    func configure(productsTableViewController: MenuTableViewController) {
         
         let apiClient = ApiClientImplementation(urlSessionConfiguration: URLSessionConfiguration.default, completionHandlerQueue: OperationQueue.main)
         
@@ -22,7 +22,7 @@ class ProductsConfiguratorImplementation: ProductsConfigurator {
         
         let displayCategoriesUseCase = DisplayCategoriesUseCaseImplementation(categoriesGateway: apiCategoriesGateway)
         
-        let presenter = ProductsPresenterImplementation(view: productsTableViewController, displayCategoriesUseCase: displayCategoriesUseCase)
+        let presenter = MenuPresenterImplementation(view: productsTableViewController, displayCategoriesUseCase: displayCategoriesUseCase)
         
         productsTableViewController.presenter = presenter
     }
