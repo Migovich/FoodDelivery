@@ -41,6 +41,7 @@ class MenuPresenterImplementation: MenuPresenter {
     fileprivate let displayCategoriesUseCase: DisplayCategoriesUseCase
     
     var menuSections = [MenuSection]()
+    var previousSection: Int!
     
     var numberOfSections: Int {
         return menuSections.count

@@ -28,6 +28,10 @@ class CategoryHeaderFooterView: UITableViewHeaderFooterView, ReusableView {
     @objc func selectHeaderAction(gestureRecognizer: UITapGestureRecognizer) {
         delegate?.toggleSection(self)
     }
+    
+    func configure(delegate: ExpandableHFVDelegate?) {
+        self.delegate = delegate
+    }
 }
 
 extension CategoryHeaderFooterView: CategoryCellView {
@@ -35,12 +39,8 @@ extension CategoryHeaderFooterView: CategoryCellView {
         self.textLabel?.text = title
     }
     
-    func configure(delegate: ExpandableHFVDelegate?) {
-        self.delegate = delegate
-    }
-    
     func setupView() {
-        self.textLabel?.textColor = .white
+        self.textLabel?.textColor = R.color.white()
         self.contentView.backgroundColor = R.color.mainGreen()
     }
 }

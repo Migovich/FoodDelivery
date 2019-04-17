@@ -25,6 +25,10 @@ class ProductTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        self.backgroundColor = R.color.white()
+        self.addToCartButton.backgroundColor = R.color.white()
+        self.addToCartButton.setTitleColor(R.color.gray(), for: .normal)
+        self.addToCartButton.layer.cornerRadius = 15
     }
     
     @IBAction func addToCartButton(_ sender: Any) {

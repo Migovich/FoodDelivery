@@ -16,63 +16,29 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
   
-  /// This `R.color` struct is generated, and contains static references to 7 colors.
+  /// This `R.color` struct is generated, and contains static references to 4 colors.
   struct color {
-    /// Color `ButtonBackground`.
-    static let buttonBackground = Rswift.ColorResource(bundle: R.hostingBundle, name: "ButtonBackground")
-    /// Color `ButtonText`.
-    static let buttonText = Rswift.ColorResource(bundle: R.hostingBundle, name: "ButtonText")
-    /// Color `CellBackground`.
-    static let cellBackground = Rswift.ColorResource(bundle: R.hostingBundle, name: "CellBackground")
-    /// Color `CellText`.
-    static let cellText = Rswift.ColorResource(bundle: R.hostingBundle, name: "CellText")
-    /// Color `HeaderCellBackground`.
-    static let headerCellBackground = Rswift.ColorResource(bundle: R.hostingBundle, name: "HeaderCellBackground")
-    /// Color `HeaderCellText`.
-    static let headerCellText = Rswift.ColorResource(bundle: R.hostingBundle, name: "HeaderCellText")
+    /// Color `DarkWhite`.
+    static let darkWhite = Rswift.ColorResource(bundle: R.hostingBundle, name: "DarkWhite")
+    /// Color `Gray`.
+    static let gray = Rswift.ColorResource(bundle: R.hostingBundle, name: "Gray")
     /// Color `MainGreen`.
     static let mainGreen = Rswift.ColorResource(bundle: R.hostingBundle, name: "MainGreen")
+    /// Color `White`.
+    static let white = Rswift.ColorResource(bundle: R.hostingBundle, name: "White")
     
-    /// `UIColor(named: "ButtonBackground", bundle: ..., traitCollection: ...)`
+    /// `UIColor(named: "DarkWhite", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
-    static func buttonBackground(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.buttonBackground, compatibleWith: traitCollection)
+    static func darkWhite(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.darkWhite, compatibleWith: traitCollection)
     }
     
-    /// `UIColor(named: "ButtonText", bundle: ..., traitCollection: ...)`
+    /// `UIColor(named: "Gray", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
-    static func buttonText(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.buttonText, compatibleWith: traitCollection)
-    }
-    
-    /// `UIColor(named: "CellBackground", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func cellBackground(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.cellBackground, compatibleWith: traitCollection)
-    }
-    
-    /// `UIColor(named: "CellText", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func cellText(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.cellText, compatibleWith: traitCollection)
-    }
-    
-    /// `UIColor(named: "HeaderCellBackground", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func headerCellBackground(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.headerCellBackground, compatibleWith: traitCollection)
-    }
-    
-    /// `UIColor(named: "HeaderCellText", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func headerCellText(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.headerCellText, compatibleWith: traitCollection)
+    static func gray(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.gray, compatibleWith: traitCollection)
     }
     
     /// `UIColor(named: "MainGreen", bundle: ..., traitCollection: ...)`
@@ -80,6 +46,13 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func mainGreen(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.mainGreen, compatibleWith: traitCollection)
+    }
+    
+    /// `UIColor(named: "White", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func white(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.white, compatibleWith: traitCollection)
     }
     
     fileprivate init() {}
@@ -264,7 +237,9 @@ struct _R: Rswift.Validatable {
       let name = "LaunchScreen"
       
       static func validate() throws {
+        if UIKit.UIImage(named: "turkey", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'turkey' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
+          if UIKit.UIColor(named: "MainGreen", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'MainGreen' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
         }
       }
       
