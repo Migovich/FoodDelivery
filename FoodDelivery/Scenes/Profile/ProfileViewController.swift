@@ -16,7 +16,7 @@ class ProfileViewController: UIViewController {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
-        imageView.image = R.image.pikachu()
+        imageView.image = R.image.turkey()
         return imageView
     }()
     
@@ -64,10 +64,10 @@ class ProfileViewController: UIViewController {
         let button = UIButton(type: .system)
         button.setTitle("SAVE", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
-        button.setTitleColor(R.color.buttonText(), for: .normal)
-        button.backgroundColor = R.color.buttonBackground()
+        button.setTitleColor(R.color.white(), for: .normal)
+        button.backgroundColor = R.color.gray()
         button.addTarget(self, action: #selector(handleSave), for: .touchUpInside)
-        button.layer.cornerRadius = 5
+        button.layer.cornerRadius = 15
         return button
     }()
     
