@@ -3,15 +3,14 @@
 //  FoodDelivery
 //
 //  Created by Myhovych on 2/21/19.
-//  Copyright © 2019 Artem Migovich. All rights reserved.
+//  Copyright © 2019 Artem Migovich. All rights reserved. 
 //
 
 import UIKit
+import SwipeableTabBarController
 
-class MainTabBarViewController: UITabBarController {
-    
-    var presenter: MainPresenter?
-    
+class MainTabBarViewController: SwipeableTabBarController {
+
     private let mainVC = MenuTableViewController()
     private let cartVC = CartTableViewController()
     private let profileVC = ProfileViewController()
@@ -24,11 +23,9 @@ class MainTabBarViewController: UITabBarController {
     }
     
     func setupController(viewController: UIViewController, image: String, title: String) -> UINavigationController {
-        
         let recentVC = UINavigationController(rootViewController: viewController)
         recentVC.tabBarItem.image = UIImage(named: image)
         recentVC.tabBarItem.title = title
-        
         return recentVC
     }
 }
