@@ -8,14 +8,12 @@
 
 import Foundation
 
-// Dummy implementation. The endpoint doesn't exist.
 struct CategoriesApiRequest: ApiRequest {
     var urlRequest: URLRequest {
         let url: URL! = URL(string: "http://localhost:3000/api/categories")
         var request = URLRequest(url: url)
         
-        request.setValue("application/vnd.fortech.books-list+json", forHTTPHeaderField: "Accept")
-        
+        request.setValue("application/foodDelivery.categories-list+json", forHTTPHeaderField: "Accept")
         request.httpMethod = "GET"
         
         return request

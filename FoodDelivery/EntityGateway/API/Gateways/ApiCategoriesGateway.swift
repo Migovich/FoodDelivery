@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Alamofire
 
 protocol ApiCategoriesGateway: CategoriesGateway {
     
@@ -32,12 +31,12 @@ class ApiCategoriesGatewayImplementation: ApiCategoriesGateway {
                         do {
                             let responseCategories = try decoder.decode(ApiCategoryResponse.self, from: response.data!)
                             let apiCategories = responseCategories.categories
-                            completionHandler(Result.success(apiCategories))
+                            completionHandler(.success(apiCategories))
                         } catch {
-                            print(error.localizedDescription)
+                            completionHandler(.failure(error))
                         }
                     case .failure(let error):
-                        print(error.localizedDescription)
+                        completionHandler(.failure(error))
                 }
             }
         }
