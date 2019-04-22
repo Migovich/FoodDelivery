@@ -16,6 +16,8 @@ class MenuConfiguratorImplementation: MenuConfigurator {
     
     func configure(productsTableViewController: MenuTableViewController) {
         
+        //
+        
         let apiClient = ApiClientImplementation(urlSessionConfiguration: URLSessionConfiguration.default, completionHandlerQueue: OperationQueue.main)
         
         let apiCategoriesGateway = ApiCategoriesGatewayImplementation(apiClient: apiClient)

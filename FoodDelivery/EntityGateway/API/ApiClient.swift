@@ -24,7 +24,7 @@ extension URLSession: URLSessionProtocol { }
 
 class ApiClientImplementation: ApiClient {
     let urlSession: URLSessionProtocol
-    
+    // session manager alamofire
     init(urlSessionConfiguration: URLSessionConfiguration, completionHandlerQueue: OperationQueue) {
         urlSession = URLSession(configuration: urlSessionConfiguration, delegate: nil, delegateQueue: completionHandlerQueue)
     }
@@ -35,8 +35,9 @@ class ApiClientImplementation: ApiClient {
     }
     
     // MARK: - ApiClient
-    
+    //T: Protocol
     func execute<T>(request: ApiRequest, completionHandler: @escaping (Result<ApiResponse<T>>) -> Void) {
+        // session manager alamofire
         let dataTask = urlSession.dataTask(with: request.urlRequest) { (data, response, error) in
             guard let httpUrlResponse = response as? HTTPURLResponse else {
                 completionHandler(.failure(NetworkRequestError(error: error)))

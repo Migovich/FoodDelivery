@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import SwipeableTabBarController
 
-class MainTabBarViewController: SwipeableTabBarController {
+class MainTabBarViewController: UITabBarController {
 
     private let mainVC = MenuTableViewController()
     private let cartVC = CartTableViewController()

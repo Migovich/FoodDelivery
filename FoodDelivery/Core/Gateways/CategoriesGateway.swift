@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias FetchCategoriesEntityGatewayCompletionHandler = (_ menuSection: Result<[MenuSection]>) -> Void
+typealias FetchCategoriesEntityGatewayCompletionHandler = (_ apiCategories: Result<[ApiCategory]>) -> Void
 
 protocol CategoriesGateway {
     func fetchCategories(completionHandler: @escaping FetchCategoriesEntityGatewayCompletionHandler)

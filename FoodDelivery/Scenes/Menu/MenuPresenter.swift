@@ -70,8 +70,8 @@ class MenuPresenterImplementation: MenuPresenter {
         view?.setupView()
             self.displayCategoriesUseCase.displayCategories { (result) in
                 switch result {
-                case let .success(menuSections):
-                    self.handleMenuSectionsReceived(menuSections)
+                case let .success(categories):
+                    self.handleMenuSectionsReceived(categories)
                 case let .failure(error):
                     print(error.localizedDescription)
                 }
@@ -91,8 +91,8 @@ class MenuPresenterImplementation: MenuPresenter {
         header.configure(delegate: delegate)
     }
     
-    fileprivate func handleMenuSectionsReceived(_ menuSections: [MenuSection]) {
-        self.menuSections = menuSections
+    fileprivate func handleMenuSectionsReceived(_ categories: [Category]) {
+        self.menuSections = categories.map { MenuSection(category: $0, isExpanded: false) }
         view?.refreshMenuView()
     }
 }

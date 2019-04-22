@@ -48,14 +48,15 @@ struct ApiParseError: Error {
 
 // This wraps a successful API response and it includes the generic data as well
 // The reason why we need this wrapper is that we want to pass to the client the status code and the raw response as well
+//T: Codable //
 struct ApiResponse<T: InitializableWithData> {
-    let entity: T
+    //let entity: T
     let httpUrlResponse: HTTPURLResponse
     let data: Data?
     
     init(data: Data?, httpUrlResponse: HTTPURLResponse) throws {
         do {
-            self.entity = try T(data: data)
+            //self.entity = try T(data: data)
             self.httpUrlResponse = httpUrlResponse
             self.data = data
         } catch {

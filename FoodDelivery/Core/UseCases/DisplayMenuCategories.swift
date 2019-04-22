@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias  DisplayCategoriesUseCaseCompletionHandler = (_ menuCategories: Result<[MenuSection]>) -> Void
+typealias  DisplayCategoriesUseCaseCompletionHandler = (_ categories: Result<[Category]>) -> Void
 
 protocol DisplayCategoriesUseCase {
     func displayCategories(completionHandler: @escaping DisplayCategoriesUseCaseCompletionHandler)
@@ -22,10 +22,15 @@ class DisplayCategoriesUseCaseImplementation: DisplayCategoriesUseCase {
     }
     
     // MARK: - DisplayMenuCategoriesUseCase
-    func displayCategories(completionHandler: @escaping (Result<[MenuSection]>) -> Void) {
+    func displayCategories(completionHandler: @escaping (Result<[Category]>) -> Void) {
         self.categoriesGateway.fetchCategories { (result) in
-            // Do any additional processing & after that call the completion handler
-            completionHandler(result)
+            switch result {
+            case let .success(menuSections):
+                let categories = menuSections.map { $0.category }
+                completionHandler(Result.success(categories))
+            case let .failure(error):
+                print(error.localizedDescription)
+            }
         }
     }
 }
