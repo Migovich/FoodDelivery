@@ -50,6 +50,7 @@
 		CDFEC59E224EAA730058B1C2 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFEC59D224EAA730058B1C2 /* ApiResponse.swift */; };
 		CDFEC5A0224EAC760058B1C2 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFEC59F224EAC760058B1C2 /* ApiClient.swift */; };
 		CDFEC5A72252BA240058B1C2 /* ApiCategoriesGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFEC5A62252BA240058B1C2 /* ApiCategoriesGateway.swift */; };
+		CDFEFA9E226E00020088C5C2 /* CategoriesApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFEFA9D226E00020088C5C2 /* CategoriesApiRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +100,7 @@
 		CDFEC59D224EAA730058B1C2 /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 		CDFEC59F224EAC760058B1C2 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		CDFEC5A62252BA240058B1C2 /* ApiCategoriesGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCategoriesGateway.swift; sourceTree = "<group>"; };
+		CDFEFA9D226E00020088C5C2 /* CategoriesApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesApiRequest.swift; sourceTree = "<group>"; };
 		F8557392A9CD60EF08E2AB42 /* Pods-FoodDelivery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodDelivery.debug.xcconfig"; path = "Target Support Files/Pods-FoodDelivery/Pods-FoodDelivery.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -242,6 +244,7 @@
 		CDA6703122453C0500016380 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				CDFEFA9C226DFFEA0088C5C2 /* Requests */,
 				CDFEC598224EA6990058B1C2 /* Gateways */,
 				CDA6703222453C1A00016380 /* Entities */,
 				CDFEC59D224EAA730058B1C2 /* ApiResponse.swift */,
@@ -317,6 +320,14 @@
 				CDFEC5A62252BA240058B1C2 /* ApiCategoriesGateway.swift */,
 			);
 			path = Gateways;
+			sourceTree = "<group>";
+		};
+		CDFEFA9C226DFFEA0088C5C2 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				CDFEFA9D226E00020088C5C2 /* CategoriesApiRequest.swift */,
+			);
+			path = Requests;
 			sourceTree = "<group>";
 		};
 		D4E0CFB06373DC5AD20C58CD /* Pods */ = {
@@ -463,7 +474,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -524,6 +535,7 @@
 				CD2EECD3222AF98700C9FFAB /* MenuPresenter.swift in Sources */,
 				CD700E7F22216DD700435D4D /* MainTabBarPresenter.swift in Sources */,
 				CDE3789E226212720037CD35 /* CounterButton.swift in Sources */,
+				CDFEFA9E226E00020088C5C2 /* CategoriesApiRequest.swift in Sources */,
 				CDFEC594224E62410058B1C2 /* Result.swift in Sources */,
 				CD2EECD8222AFDF300C9FFAB /* ViewRouter.swift in Sources */,
 				CDD6C16A221D687C0005710C /* AppDelegate.swift in Sources */,

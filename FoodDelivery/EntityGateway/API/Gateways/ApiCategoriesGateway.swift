@@ -22,19 +22,15 @@ class ApiCategoriesGatewayImplementation: ApiCategoriesGateway {
     }
     
     // MARK: - ApiCategoriesGateway
-    // выкинуть alamofire и использовать urlsession
     func fetchCategories(completionHandler: @escaping (_ result: Result<[ApiCategory]>) -> Void) {
         DispatchQueue.main.async {
-            // TODO: Read about .validate
-            
-            //api client.execute
-            Alamofire.request("http://localhost:3000/api/categories")
-                .responseData(completionHandler: { response in
-                    switch response.result {
-                    case .success(let data):
+            let categoriesApiRequest = CategoriesApiRequest()
+            self.apiClient.execute(request: categoriesApiRequest) { result in
+                switch result {
+                    case let .success(response):
                         let decoder = JSONDecoder()
                         do {
-                            let responseCategories = try decoder.decode(ApiCategoryResponse.self, from: data)
+                            let responseCategories = try decoder.decode(ApiCategoryResponse.self, from: response.data!)
                             let apiCategories = responseCategories.categories
                             completionHandler(Result.success(apiCategories))
                         } catch {
@@ -42,8 +38,8 @@ class ApiCategoriesGatewayImplementation: ApiCategoriesGateway {
                         }
                     case .failure(let error):
                         print(error.localizedDescription)
-                    }
-                })
+                }
+            }
         }
     }
 }
