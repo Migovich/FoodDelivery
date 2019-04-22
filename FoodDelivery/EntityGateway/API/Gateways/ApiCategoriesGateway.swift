@@ -15,6 +15,7 @@ protocol ApiCategoriesGateway: CategoriesGateway {
 class ApiCategoriesGatewayImplementation: ApiCategoriesGateway {
     
     let apiClient: ApiClient
+    let decoder = JSONDecoder()
     
     init(apiClient: ApiClient) {
         self.apiClient = apiClient
@@ -27,9 +28,8 @@ class ApiCategoriesGatewayImplementation: ApiCategoriesGateway {
             self.apiClient.execute(request: categoriesApiRequest) { result in
                 switch result {
                     case let .success(response):
-                        let decoder = JSONDecoder()
                         do {
-                            let responseCategories = try decoder.decode(ApiCategoryResponse.self, from: response.data!)
+                            let responseCategories = try self.decoder.decode(ApiCategoryResponse.self, from: response.data!)
                             let apiCategories = responseCategories.categories
                             completionHandler(.success(apiCategories))
                         } catch {
