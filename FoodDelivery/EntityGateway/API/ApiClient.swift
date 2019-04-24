@@ -40,7 +40,6 @@ class ApiClientImplementation: ApiClient {
                 completionHandler(.failure(NetworkRequestError(error: error)))
                 return
             }
-            
             let successRange = 200...299
             if successRange.contains(httpUrlResponse.statusCode) {
                 do {

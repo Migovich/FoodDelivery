@@ -23,7 +23,6 @@ class ApiCategoriesGatewayImplementation: ApiCategoriesGateway {
     
     // MARK: - ApiCategoriesGateway
     func fetchCategories(completionHandler: @escaping (_ result: Result<[ApiCategory]>) -> Void) {
-        DispatchQueue.main.async {
             let categoriesApiRequest = CategoriesApiRequest()
             self.apiClient.execute(request: categoriesApiRequest) { result in
                 switch result {
@@ -40,5 +39,4 @@ class ApiCategoriesGatewayImplementation: ApiCategoriesGateway {
                 }
             }
         }
-    }
 }

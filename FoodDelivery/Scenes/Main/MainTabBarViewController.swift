@@ -15,15 +15,15 @@ class MainTabBarViewController: UITabBarController {
     private let profileVC = ProfileViewController()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        viewControllers = [setupController(viewController: mainVC, image: "menu", title: "Menu"),
-                           setupController(viewController: cartVC, image: "cart", title: "Cart"),
-                           setupController(viewController: profileVC, image: "profile", title: "Profile")]
+        viewControllers = [setupController(viewController: mainVC, title: "Menu", image: R.image.menu()!),
+                           setupController(viewController: cartVC, title: "Cart", image: R.image.cart()!),
+                           setupController(viewController: profileVC, title: "Profile", image: R.image.profile()!)]
+        tabBar.tintColor = R.color.gray()
     }
     
-    func setupController(viewController: UIViewController, image: String, title: String) -> UINavigationController {
+    func setupController(viewController: UIViewController, title: String, image: UIImage) -> UINavigationController {
         let recentVC = UINavigationController(rootViewController: viewController)
-        recentVC.tabBarItem.image = UIImage(named: image)
+        recentVC.tabBarItem.image = image
         recentVC.tabBarItem.title = title
         return recentVC
     }
