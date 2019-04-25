@@ -8,6 +8,10 @@
 
 import Foundation
 
+protocol MenuObserver: class {
+    func addToCart(subject: CartGateway)
+}
+
 protocol MenuView: class {
     func displayScreenTitle(title: String)
     func setupView()
@@ -33,6 +37,7 @@ protocol MenuPresenter {
     func viewDidLoad()
     func configure(cell: ProductCellView, for indexPath: IndexPath)
     func configure(header: CategoryHeaderFooterView, delegate: ExpandableHFVDelegate?, section: Int)
+    func addToCart(section: Int, row: Int)
 }
 
 class MenuPresenterImplementation: MenuPresenter {
@@ -52,15 +57,12 @@ class MenuPresenterImplementation: MenuPresenter {
     }
     
     func numberOfRowsInSection(section: Int) -> Int {
-        guard menuSections.indices.contains(section) else {
-            return 0
-        }
+        guard menuSections.indices.contains(section) else { return 0 }
         let sectionItem = menuSections[section]
         return sectionItem.isExpanded ? sectionItem.category.products.count : 0
     }
     
-    init(view: MenuView,
-         displayCategoriesUseCase: DisplayCategoriesUseCase) {
+    init(view: MenuView, displayCategoriesUseCase: DisplayCategoriesUseCase) {
         self.view = view
         self.displayCategoriesUseCase = displayCategoriesUseCase
     }
@@ -89,6 +91,11 @@ class MenuPresenterImplementation: MenuPresenter {
     func configure(header: CategoryHeaderFooterView, delegate: ExpandableHFVDelegate?, section: Int) {
         header.display(title: menuSections[section].category.title)
         header.configure(delegate: delegate)
+    }
+    
+    func addToCart(section: Int, row: Int) {
+        let product = menuSections[section].category.products[row]
+        //print(product)
     }
     
     fileprivate func handleMenuSectionsReceived(_ categories: [Category]) {

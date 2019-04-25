@@ -27,3 +27,21 @@ class CartTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
         // Configure the view for the selected state
     }
 }
+
+extension CartTableViewCell: CartCellView {
+    func display(imageURL: URL?) {
+        productImageView?.image = R.image.turkey()
+    }
+    
+    func display(title: String) {
+        titleLabel.text = title
+    }
+    
+    func display(price: String) {
+        priceLabel.text = price
+    }
+    
+    func display(pcs: String) {
+        pcsCountLabel.text = pcs
+    }
+}

@@ -13,6 +13,8 @@ class MenuTableViewController: UITableViewController {
     // MARK: - Properties
     var presenter: MenuPresenter!
     var configurator = MenuConfiguratorImplementation()
+    let observer = CartGateway()
+    let cartObserver = CartTableViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +22,7 @@ class MenuTableViewController: UITableViewController {
         presenter.viewDidLoad()
     }
     
-    // MARK: - UITableViewDataSource
+    // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(CategoryHeaderFooterView.self)
         presenter.configure(header: headerView, delegate: self, section: section)
@@ -58,13 +60,6 @@ class MenuTableViewController: UITableViewController {
     }
 }
 
-extension MenuTableViewController: ProductTableViewCellDelegate {
-    func addToCartButtonTapped(_ sender: ProductTableViewCell) {
-        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
-        print(tappedIndexPath)
-    }
-}
-
 extension MenuTableViewController: ExpandableHFVDelegate {
     func toggleSection(_ sender: CategoryHeaderFooterView) {
         guard let section = tableView.sectionIndexForHeaderView(for: sender) else { return }
@@ -89,5 +84,16 @@ extension MenuTableViewController: MenuView {
     
     func refreshMenuView() {
         tableView.reloadData()
+    }
+}
+
+extension MenuTableViewController: ProductTableViewCellDelegate {
+    func addToCartButtonTapped(_ sender: ProductTableViewCell) {
+        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
+        print(tappedIndexPath)
+        presenter.addToCart(section: tappedIndexPath.section, row: tappedIndexPath.row)
+        
+        observer.subscribe(cartObserver)
+        observer.addCartListner()
     }
 }
