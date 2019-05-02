@@ -10,21 +10,23 @@ import Foundation
 
 protocol CartProductsObserver: class {
     func didAddToCart(product: Product)
-    func update(subject: CartProductsGateway)
 }
 
 protocol CartProductsGateway {
     func subscribe(_ observer: CartProductsObserver)
     func unsubscribe(_ observer: CartProductsObserver)
-    func notify()
     func add(product: Product)
 }
 
 class CartProductsGatewayImplementation: CartProductsGateway {
     
+    var storage = CacheProductsCart()
     private lazy var observers = [CartProductsObserver]()
     
-    var storage = CacheProductsCart()
+    init(storage: CacheProductsCart, observers: [CartProductsObserver]) {
+        self.storage = storage
+        self.observers = observers
+    }
     
     func subscribe(_ observer: CartProductsObserver) {
         print("\(observer) subscribed")
@@ -38,17 +40,10 @@ class CartProductsGatewayImplementation: CartProductsGateway {
             print(#function)
         }
     }
-    
-    func notify() {
-        print(#function)
-        observers.forEach({$0.update(subject: self)})
-        //еще и передавать продукт сюда
-        print(storage.products)
-    }
 
     func add(product: Product) {
         print(#function)
-        observers.forEach { $0.didAddToCart(product: product) }
+        observers.forEach {$0.didAddToCart(product: product)}
         storage.add(product, count: 1)
     }
 }

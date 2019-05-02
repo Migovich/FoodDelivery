@@ -8,7 +8,12 @@
 
 import Foundation
 
-class CacheProductsCart {
+protocol CacheProductsCartProtocol: class {
+    func add(_ product: Product, count: Int)
+    func remove(_ product: Product)
+}
+
+class CacheProductsCart: CacheProductsCartProtocol {
     
     var products = [Product: Int]()
     
@@ -17,6 +22,6 @@ class CacheProductsCart {
     }
     
     func remove(_ product: Product) {
-        
+        products.removeValue(forKey: product)
     }
 }

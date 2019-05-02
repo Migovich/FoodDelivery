@@ -94,6 +94,5 @@ extension MenuTableViewController: ProductTableViewCellDelegate {
         print(tappedIndexPath)
         let product = presenter.getProduct(section: tappedIndexPath.section, row: tappedIndexPath.row)
         observer.add(product: product)
-        observer.notify()
     }
 }
