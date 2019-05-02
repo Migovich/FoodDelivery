@@ -15,7 +15,7 @@ class CartTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configurator.configure(cartViewController: self)
+        configurator.configure(cartTableViewController: self)
         presenter.viewDidLoad()
     }
 
@@ -52,9 +52,13 @@ extension CartTableViewController: CartView {
     }
 }
 
-extension CartTableViewController: MenuObserver {
-    func addToCart(subject: CartGateway) {
-       //presenter.addToCartListener(product: subject.product)
-        print("PRODUCT: \(subject.product.title)")
+extension CartTableViewController: CartProductsObserver {
+    func didAddToCart(product: Product) {
+        print(#function)
+    }
+    
+    func update(subject: CartProductsGateway) {
+        print(#function)
+        //presenter.addToCartListener(products: storage.products)
     }
 }

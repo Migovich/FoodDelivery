@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CartTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
 
@@ -17,9 +18,9 @@ class CartTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
     @IBOutlet weak var pcsCountLabel: UILabel!
     @IBOutlet weak var minusButton: UIButton!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.backgroundColor = R.color.white()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -30,7 +31,7 @@ class CartTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
 
 extension CartTableViewCell: CartCellView {
     func display(imageURL: URL?) {
-        productImageView?.image = R.image.turkey()
+        productImageView?.kf.setImage(with: imageURL)
     }
     
     func display(title: String) {

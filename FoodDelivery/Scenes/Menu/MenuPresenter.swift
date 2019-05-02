@@ -8,10 +8,6 @@
 
 import Foundation
 
-protocol MenuObserver: class {
-    func addToCart(subject: CartGateway)
-}
-
 protocol MenuView: class {
     func displayScreenTitle(title: String)
     func setupView()
@@ -37,7 +33,7 @@ protocol MenuPresenter {
     func viewDidLoad()
     func configure(cell: ProductCellView, for indexPath: IndexPath)
     func configure(header: CategoryHeaderFooterView, delegate: ExpandableHFVDelegate?, section: Int)
-    func addToCart(section: Int, row: Int)
+    func getProduct(section: Int, row: Int) -> Product
 }
 
 class MenuPresenterImplementation: MenuPresenter {
@@ -93,9 +89,9 @@ class MenuPresenterImplementation: MenuPresenter {
         header.configure(delegate: delegate)
     }
     
-    func addToCart(section: Int, row: Int) {
+    func getProduct(section: Int, row: Int) -> Product {
         let product = menuSections[section].category.products[row]
-        //print(product)
+        return product
     }
     
     fileprivate func handleMenuSectionsReceived(_ categories: [Category]) {

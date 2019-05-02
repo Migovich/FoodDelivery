@@ -25,7 +25,7 @@ protocol CartPresenter {
     var numberOfRows: Int { get }
     func viewDidLoad()
     func configure(cell: CartCellView, for indexPath: IndexPath)
-    func addToCartListener(product: Product)
+    func addToCartListener(products: [Product:Int])
 }
 
 class CartPresenterImplementation: CartPresenter {
@@ -45,7 +45,7 @@ class CartPresenterImplementation: CartPresenter {
     func viewDidLoad() {
         view?.displayScreenTitle(title: "Cart")
         view?.setupView()
-        
+        //self.addToCartListener()
     }
     
     func configure(cell: CartCellView, for indexPath: IndexPath) {
@@ -56,11 +56,8 @@ class CartPresenterImplementation: CartPresenter {
         cell.display(pcs: "1")
     }
     
-    func addToCartListener(product: Product) {
-        let item: Product = {
-            Product(title: "Sushi", subtitle: "Fresh fish", price: 50, imageURL: nil)
-        }()
-        products.append(item)
+    func addToCartListener(products: [Product:Int]) {
+        print(products)
         view?.refreshCartView()
     }
 }

@@ -23,7 +23,8 @@
 		CD2EECD5222AF99900C9FFAB /* MenuViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2EECD4222AF99900C9FFAB /* MenuViewRouter.swift */; };
 		CD2EECD8222AFDF300C9FFAB /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2EECD7222AFDF300C9FFAB /* ViewRouter.swift */; };
 		CD48FC0A223C20F0004095E8 /* CategoryHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD48FC09223C20F0004095E8 /* CategoryHeaderFooterView.swift */; };
-		CD4EDC6A2271E81F00844672 /* CartGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4EDC692271E81F00844672 /* CartGateway.swift */; };
+		CD4EDC6A2271E81F00844672 /* CartProductsGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4EDC692271E81F00844672 /* CartProductsGateway.swift */; };
+		CD4EDC8E2279BF8A00844672 /* CacheProductsCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4EDC8D2279BF8A00844672 /* CacheProductsCart.swift */; };
 		CD6A09E1222039C20003162E /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A09E0222039C20003162E /* UIViewExtension.swift */; };
 		CD6C6CE9221F265E004C9DD0 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C6CE8221F265E004C9DD0 /* MenuTableViewController.swift */; };
 		CD6C6CEF221F2701004C9DD0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C6CEE221F2701004C9DD0 /* ProfileViewController.swift */; };
@@ -72,7 +73,8 @@
 		CD2EECD4222AF99900C9FFAB /* MenuViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewRouter.swift; sourceTree = "<group>"; };
 		CD2EECD7222AFDF300C9FFAB /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		CD48FC09223C20F0004095E8 /* CategoryHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryHeaderFooterView.swift; sourceTree = "<group>"; };
-		CD4EDC692271E81F00844672 /* CartGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartGateway.swift; sourceTree = "<group>"; };
+		CD4EDC692271E81F00844672 /* CartProductsGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartProductsGateway.swift; sourceTree = "<group>"; };
+		CD4EDC8D2279BF8A00844672 /* CacheProductsCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheProductsCart.swift; sourceTree = "<group>"; };
 		CD6A09E0222039C20003162E /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		CD6C6CE8221F265E004C9DD0 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		CD6C6CEE221F2701004C9DD0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 		CD05C7AC22302F210077041E /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				CD4EDC91227A129000844672 /* Cache */,
 				CDFEC590224E613B0058B1C2 /* Gateways */,
 				CDFEC58D224E5FAF0058B1C2 /* UseCases */,
 				CD049DA8223B0277009280D5 /* Extensions */,
@@ -166,6 +169,14 @@
 				CD2EECD7222AFDF300C9FFAB /* ViewRouter.swift */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		CD4EDC91227A129000844672 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				CD4EDC8D2279BF8A00844672 /* CacheProductsCart.swift */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 		CD6C6CEA221F266D004C9DD0 /* Scenes */ = {
@@ -209,8 +220,8 @@
 			isa = PBXGroup;
 			children = (
 				CD2EECCA222AF90F00C9FFAB /* CartConfigurator.swift */,
-				CD880AC7225CDF2600548929 /* CartTableViewController.swift */,
 				CD2EECC6222AF8EE00C9FFAB /* CartPresenter.swift */,
+				CD880AC7225CDF2600548929 /* CartTableViewController.swift */,
 				CD2EECC8222AF8FA00C9FFAB /* CartViewRouter.swift */,
 				CD880AC9225CE34700548929 /* CartTableViewCell.swift */,
 				CD880ACA225CE34700548929 /* CartTableViewCell.xib */,
@@ -312,7 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				CDFEC591224E61510058B1C2 /* CategoriesGateway.swift */,
-				CD4EDC692271E81F00844672 /* CartGateway.swift */,
+				CD4EDC692271E81F00844672 /* CartProductsGateway.swift */,
 			);
 			path = Gateways;
 			sourceTree = "<group>";
@@ -533,13 +544,14 @@
 				CD880AC8225CDF2600548929 /* CartTableViewController.swift in Sources */,
 				CD2EECD1222AF97200C9FFAB /* ProfileViewRouter.swift in Sources */,
 				CD880AD0225D4B6400548929 /* AddToCart.swift in Sources */,
-				CD4EDC6A2271E81F00844672 /* CartGateway.swift in Sources */,
+				CD4EDC6A2271E81F00844672 /* CartProductsGateway.swift in Sources */,
 				CD2EECD3222AF98700C9FFAB /* MenuPresenter.swift in Sources */,
 				CD700E7F22216DD700435D4D /* MainTabBarPresenter.swift in Sources */,
 				CDE3789E226212720037CD35 /* CounterButton.swift in Sources */,
 				CDFEFA9E226E00020088C5C2 /* CategoriesApiRequest.swift in Sources */,
 				CDFEC594224E62410058B1C2 /* Result.swift in Sources */,
 				CD2EECD8222AFDF300C9FFAB /* ViewRouter.swift in Sources */,
+				CD4EDC8E2279BF8A00844672 /* CacheProductsCart.swift in Sources */,
 				CDD6C16A221D687C0005710C /* AppDelegate.swift in Sources */,
 				CDFEC592224E61510058B1C2 /* CategoriesGateway.swift in Sources */,
 				CD05C7AF22302F4B0077041E /* MenuSection.swift in Sources */,

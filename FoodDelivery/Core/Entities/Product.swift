@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Product {
+struct Product: Hashable {
     let title: String
     let subtitle: String
     let price: Double
