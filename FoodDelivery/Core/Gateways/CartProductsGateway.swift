@@ -9,23 +9,27 @@
 import Foundation
 
 protocol CartProductsObserver: class {
-    func didAddToCart(product: Product)
+    func didAddToCart(product: Product, count: Int)
+    func didRemoveFromCart(product: Product)
+    func didChangeCartItemPcs(product: Product, count: Int)
 }
 
 protocol CartProductsGateway {
     func subscribe(_ observer: CartProductsObserver)
     func unsubscribe(_ observer: CartProductsObserver)
     func add(product: Product)
+    func remove(product: Product)
+    func changeCartItemPcs(product: Product, count: Int)
 }
 
 class CartProductsGatewayImplementation: CartProductsGateway {
     
-    var storage = CacheProductsCart()
-    private lazy var observers = [CartProductsObserver]()
+    static let shared = CartProductsGatewayImplementation()
+
+    var storage = CacheProductsCartImplementation()
+    var observers = [CartProductsObserver]()
     
-    init(storage: CacheProductsCart, observers: [CartProductsObserver]) {
-        self.storage = storage
-        self.observers = observers
+    private init() {
     }
     
     func subscribe(_ observer: CartProductsObserver) {
@@ -34,16 +38,22 @@ class CartProductsGatewayImplementation: CartProductsGateway {
     }
     
     func unsubscribe(_ observer: CartProductsObserver) {
-        print(#function)
+         print("\(observer) unsubscribed")
         if let index = observers.firstIndex(where: {$0 === observer}) {
             observers.remove(at: index)
-            print(#function)
         }
     }
 
     func add(product: Product) {
-        print(#function)
-        observers.forEach {$0.didAddToCart(product: product)}
+        observers.forEach {$0.didAddToCart(product: product, count: 1)}
         storage.add(product, count: 1)
+    }
+    
+    func remove(product: Product) {
+        
+    }
+    
+    func changeCartItemPcs(product: Product, count: Int) {
+
     }
 }

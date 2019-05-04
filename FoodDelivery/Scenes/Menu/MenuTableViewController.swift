@@ -13,14 +13,14 @@ class MenuTableViewController: UITableViewController {
     // MARK: - Properties
     var presenter: MenuPresenter!
     var configurator = MenuConfiguratorImplementation()
-    let observer = CartProductsGatewayImplementation()
+    //let observer = CartProductsGatewayImplementation()
     let cartObserver = CartTableViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configurator.configure(productsTableViewController: self)
         presenter.viewDidLoad()
-        observer.subscribe(cartObserver)
+        //observer.subscribe(cartObserver)
     }
     
     // MARK: - Table view data source
@@ -89,10 +89,18 @@ extension MenuTableViewController: MenuView {
 }
 
 extension MenuTableViewController: ProductTableViewCellDelegate {
+    func increaseProductPcs(count: Int) {
+        
+    }
+    
+    func decreaseProductPcs(count: Int) {
+        
+    }
+    
     func addToCartButtonTapped(_ sender: ProductTableViewCell) {
         guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
         print(tappedIndexPath)
         let product = presenter.getProduct(section: tappedIndexPath.section, row: tappedIndexPath.row)
-        observer.add(product: product)
+        //observer.add(product: product) 
     }
 }

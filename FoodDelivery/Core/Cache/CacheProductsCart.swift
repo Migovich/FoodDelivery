@@ -8,12 +8,12 @@
 
 import Foundation
 
-protocol CacheProductsCartProtocol: class {
+protocol CacheProductsCart: class {
     func add(_ product: Product, count: Int)
     func remove(_ product: Product)
 }
 
-class CacheProductsCart: CacheProductsCartProtocol {
+class CacheProductsCartImplementation: CacheProductsCart {
     
     var products = [Product: Int]()
     

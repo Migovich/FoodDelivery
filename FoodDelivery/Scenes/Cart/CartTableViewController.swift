@@ -53,6 +53,7 @@ extension CartTableViewController: CartView {
 }
 
 extension CartTableViewController: CartProductsObserver {
+    
     func didAddToCart(product: Product) {
         print(#function)
     }

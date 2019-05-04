@@ -43,7 +43,7 @@ class MenuPresenterImplementation: MenuPresenter {
     
     var menuSections = [MenuSection]()
     var previousSection: Int!
-    
+
     var numberOfSections: Int {
         return menuSections.count
     }
