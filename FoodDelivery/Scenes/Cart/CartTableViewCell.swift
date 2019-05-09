@@ -11,6 +11,8 @@ import Kingfisher
 
 class CartTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
 
+    
+    
     @IBOutlet weak var productImageView: UIImageView?
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
@@ -27,6 +29,11 @@ class CartTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
     }
+    @IBAction func plusButton(_ sender: Any) {
+        
+    }
+    
+    
 }
 
 extension CartTableViewCell: CartCellView {

@@ -10,7 +10,7 @@ import Foundation
 
 protocol CartProductsObserver: class {
     func didAddToCart(product: Product, count: Int)
-    func didRemoveFromCart(product: Product)
+    func didRemoveFromCart(product: Product, count: Int)
     func didChangeCartItemPcs(product: Product, count: Int)
 }
 
@@ -24,12 +24,15 @@ protocol CartProductsGateway {
 
 class CartProductsGatewayImplementation: CartProductsGateway {
     
-    static let shared = CartProductsGatewayImplementation()
+    static let shared = CartProductsGatewayImplementation(storage: CacheProductsCartImplementation(), observers: [])
 
-    var storage = CacheProductsCartImplementation()
-    var observers = [CartProductsObserver]()
+    var storage: CacheProductsCart?
+    // Список обсерверов которые подписаны на нотификации
+    private lazy var observers = [CartProductsObserver]()
     
-    private init() {
+    init(storage: CacheProductsCart, observers: [CartProductsObserver]) {
+        self.storage = storage
+        self.observers = observers
     }
     
     func subscribe(_ observer: CartProductsObserver) {
@@ -46,11 +49,11 @@ class CartProductsGatewayImplementation: CartProductsGateway {
 
     func add(product: Product) {
         observers.forEach {$0.didAddToCart(product: product, count: 1)}
-        storage.add(product, count: 1)
+        storage?.add(product, count: 1)
     }
     
     func remove(product: Product) {
-        
+        storage?.remove(product)
     }
     
     func changeCartItemPcs(product: Product, count: Int) {

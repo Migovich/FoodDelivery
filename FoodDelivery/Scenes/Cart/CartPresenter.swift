@@ -12,6 +12,7 @@ protocol CartView: class {
     func displayScreenTitle(title: String)
     func setupView()
     func refreshCartView()
+   // func insertRowAtIndex //будет рендерить
 }
 
 protocol CartCellView {
@@ -25,14 +26,26 @@ protocol CartPresenter {
     var numberOfRows: Int { get }
     func viewDidLoad()
     func configure(cell: CartCellView, for indexPath: IndexPath)
-    func addToCartListener(products: [Product:Int])
+    func addToCartListener(products: [Product])
 }
 
 class CartPresenterImplementation: CartPresenter {
     
+//    func add(product: Product) {
+//        products.append(product)
+//        //view.insertProductAtIndex(index: lastIndex)
+//        for product in products {
+//
+//        }
+//    }
+    
     fileprivate weak var view: CartView?
+    //fileprivate let cartProductsUseCaseDelegate: CartProductsUseCaseDelegate
     
     var products = [Product]()
+    var storage = [Product: Int]()
+    //добавить дикшинари
+    //апдейтить каунт в дикшинари
     
     var numberOfRows: Int {
         return products.count
@@ -40,12 +53,13 @@ class CartPresenterImplementation: CartPresenter {
     
     init(view: CartView) {
         self.view = view
+       //self.cartProductsUseCaseDelegate = delegate
     }
     
     func viewDidLoad() {
         view?.displayScreenTitle(title: "Cart")
         view?.setupView()
-        //self.addToCartListener()
+        self.addToCartListener(products: products)
     }
     
     func configure(cell: CartCellView, for indexPath: IndexPath) {
@@ -55,9 +69,24 @@ class CartPresenterImplementation: CartPresenter {
         cell.display(title: product.title)
         cell.display(pcs: "1")
     }
-    
-    func addToCartListener(products: [Product:Int]) {
+
+    func addToCartListener(products: [Product]) {
         print(products)
         view?.refreshCartView()
+    }
+}
+
+extension CartPresenterImplementation: CartProductsUseCaseDelegate {
+    func add(product: Product, count: Int) {
+        products.append(product)
+        storage[product] = count + 1
+    }
+    
+    func remove(product: Product, count: Int) {
+        
+    }
+    
+    func productsPcsChanged(product: Product, to: Int) {
+        
     }
 }

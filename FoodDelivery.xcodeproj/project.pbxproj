@@ -34,7 +34,6 @@
 		CD880AC8225CDF2600548929 /* CartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD880AC7225CDF2600548929 /* CartTableViewController.swift */; };
 		CD880ACB225CE34700548929 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD880AC9225CE34700548929 /* CartTableViewCell.swift */; };
 		CD880ACC225CE34700548929 /* CartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD880ACA225CE34700548929 /* CartTableViewCell.xib */; };
-		CD880AD0225D4B6400548929 /* AddToCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD880ACF225D4B6400548929 /* AddToCart.swift */; };
 		CDA670062241131100016380 /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA670052241131100016380 /* Rswift.framework */; };
 		CDA6700A2241151900016380 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA670092241151900016380 /* R.generated.swift */; };
 		CDA6700F2242DF1D00016380 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA6700E2242DF1D00016380 /* Category.swift */; };
@@ -85,7 +84,6 @@
 		CD880AC7225CDF2600548929 /* CartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewController.swift; sourceTree = "<group>"; };
 		CD880AC9225CE34700548929 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		CD880ACA225CE34700548929 /* CartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartTableViewCell.xib; sourceTree = "<group>"; };
-		CD880ACF225D4B6400548929 /* AddToCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCart.swift; sourceTree = "<group>"; };
 		CDA670052241131100016380 /* Rswift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Rswift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA670092241151900016380 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		CDA6700E2242DF1D00016380 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -159,7 +157,6 @@
 				CD05C7AE22302F4B0077041E /* MenuSection.swift */,
 				CDA6700E2242DF1D00016380 /* Category.swift */,
 				CDA670102242DF2E00016380 /* Product.swift */,
-				CD880ACF225D4B6400548929 /* AddToCart.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -184,6 +181,7 @@
 		CD6C6CEA221F266D004C9DD0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CDB1F0E42282E74800ACDE78 /* Other */,
 				CD700E7D22216D9000435D4D /* Main */,
 				CD6C6CEB221F2696004C9DD0 /* Menu */,
 				CD6C6CED221F26BE004C9DD0 /* Cart */,
@@ -278,6 +276,13 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		CDB1F0E42282E74800ACDE78 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		CDD6C15D221D687B0005710C = {
 			isa = PBXGroup;
 			children = (
@@ -316,8 +321,8 @@
 		CDFEC58D224E5FAF0058B1C2 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				CDFEC58E224E5FDA0058B1C2 /* DisplayMenuCategories.swift */,
 				CD4EDC92227B718700844672 /* CartProductsUseCase.swift */,
+				CDFEC58E224E5FDA0058B1C2 /* DisplayMenuCategories.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -325,8 +330,8 @@
 		CDFEC590224E613B0058B1C2 /* Gateways */ = {
 			isa = PBXGroup;
 			children = (
-				CDFEC591224E61510058B1C2 /* CategoriesGateway.swift */,
 				CD4EDC692271E81F00844672 /* CartProductsGateway.swift */,
+				CDFEC591224E61510058B1C2 /* CategoriesGateway.swift */,
 			);
 			path = Gateways;
 			sourceTree = "<group>";
@@ -547,7 +552,6 @@
 				CD049DA7223ABE00009280D5 /* ReusableView.swift in Sources */,
 				CD880AC8225CDF2600548929 /* CartTableViewController.swift in Sources */,
 				CD2EECD1222AF97200C9FFAB /* ProfileViewRouter.swift in Sources */,
-				CD880AD0225D4B6400548929 /* AddToCart.swift in Sources */,
 				CD4EDC6A2271E81F00844672 /* CartProductsGateway.swift in Sources */,
 				CD2EECD3222AF98700C9FFAB /* MenuPresenter.swift in Sources */,
 				CD700E7F22216DD700435D4D /* MainTabBarPresenter.swift in Sources */,

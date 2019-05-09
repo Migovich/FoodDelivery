@@ -16,8 +16,14 @@ class CartConfiguratorImplementation: CartConfigurator {
     
     func configure(cartTableViewController: CartTableViewController) {
         
+        let gateway = CartProductsGatewayImplementation.shared
+        
         let presenter = CartPresenterImplementation(view: cartTableViewController)
         
         cartTableViewController.presenter = presenter
+        
+        let cartProductsUseCase = CartProductsUseCaseImplementation(gateway: gateway, delegate: presenter)
+        
+        //cartTableViewController.useCase = cartProductsUseCase
     }
 }

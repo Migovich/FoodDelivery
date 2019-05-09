@@ -20,6 +20,7 @@ class CartTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
+    
     override func tableView(_ tableView: UITableView,
                             heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 230
@@ -49,17 +50,5 @@ extension CartTableViewController: CartView {
     
     func refreshCartView() {
         tableView.reloadData()
-    }
-}
-
-extension CartTableViewController: CartProductsObserver {
-    
-    func didAddToCart(product: Product) {
-        print(#function)
-    }
-    
-    func update(subject: CartProductsGateway) {
-        print(#function)
-        //presenter.addToCartListener(products: storage.products)
     }
 }

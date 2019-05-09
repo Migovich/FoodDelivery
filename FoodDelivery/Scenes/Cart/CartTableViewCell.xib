@@ -48,6 +48,9 @@
                         <state key="normal" title="+">
                             <color key="titleColor" name="ButtonBackground"/>
                         </state>
+                        <connections>
+                            <action selector="plusButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="mnK-As-Ebs"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tyi-t1-iQ6">
                         <rect key="frame" x="291" y="50.5" width="24" height="24"/>
@@ -110,7 +113,7 @@
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MainGreen">
-            <color red="0.28200000524520874" green="0.79900002479553223" blue="0.36300000548362732" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.28235294117647058" green="0.58431372549019611" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
