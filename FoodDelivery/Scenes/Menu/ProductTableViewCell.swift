@@ -22,43 +22,19 @@ class ProductTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var addToCartButton: UIButton!
-    @IBOutlet weak var pcsLabel: UILabel!
-    @IBOutlet weak var pcsCounter: UIStackView!
-    
+
     weak var delegate: ProductTableViewCellDelegate?
-    var count = 0
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         self.backgroundColor = R.color.white()
         self.addToCartButton.backgroundColor = R.color.white()
         self.addToCartButton.setTitleColor(R.color.gray(), for: .normal)
         self.addToCartButton.layer.cornerRadius = 15
-        self.pcsCounter.isHidden = true
     }
     
     @IBAction func addToCartButton(_ sender: Any) {
         delegate?.addToCartButtonTapped(self)
-        self.count = 1
-        pcsLabel.text = "\(count)"
-        self.pcsCounter.isHidden = false
-        self.addToCartButton.isHidden = true
-    }
-    
-    @IBAction func increaseButton(_ sender: Any) {
-        self.count += 1
-        delegate?.increaseProductPcs(count: count)
-        pcsLabel.text = "\(count)"
-    }
-    
-    @IBAction func decreaseButton(_ sender: Any) {
-        self.count -= 1
-        delegate?.increaseProductPcs(count: count)
-        pcsLabel.text = "\(count)"
-        if count < 1 {
-            self.pcsCounter.isHidden = true
-            self.addToCartButton.isHidden = false
-        }
     }
 }
 

@@ -46,7 +46,7 @@
                             <constraint firstAttribute="height" constant="24" id="nPc-fR-lXQ"/>
                         </constraints>
                         <state key="normal" title="+">
-                            <color key="titleColor" name="ButtonBackground"/>
+                            <color key="titleColor" name="White"/>
                         </state>
                         <connections>
                             <action selector="plusButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="mnK-As-Ebs"/>
@@ -61,7 +61,7 @@
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <state key="normal" title="-">
-                            <color key="titleColor" name="ButtonBackground"/>
+                            <color key="titleColor" name="White"/>
                         </state>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EIP-6i-UFp">
@@ -100,20 +100,15 @@
                 <outlet property="productImageView" destination="i3t-50-yON" id="Xm1-Ew-qtq"/>
                 <outlet property="titleLabel" destination="tFz-BJ-6h1" id="HBB-nX-2hx"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="131.91964285714286"/>
+            <point key="canvasLocation" x="117" y="132"/>
         </tableViewCell>
-        <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" id="KwR-Wr-FIe">
-            <rect key="frame" x="0.0" y="0.0" width="94" height="29"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <point key="canvasLocation" x="-396" y="127"/>
-        </stepper>
     </objects>
     <resources>
-        <namedColor name="ButtonBackground">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="MainGreen">
             <color red="0.28235294117647058" green="0.58431372549019611" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White">
+            <color red="0.9882352941176471" green="0.96862745098039216" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

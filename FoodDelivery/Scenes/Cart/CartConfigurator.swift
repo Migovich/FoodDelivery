@@ -23,7 +23,5 @@ class CartConfiguratorImplementation: CartConfigurator {
         cartTableViewController.presenter = presenter
         
         let cartProductsUseCase = CartProductsUseCaseImplementation(gateway: gateway, delegate: presenter)
-        
-        //cartTableViewController.useCase = cartProductsUseCase
     }
 }

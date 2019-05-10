@@ -11,8 +11,6 @@ import Kingfisher
 
 class CartTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
 
-    
-    
     @IBOutlet weak var productImageView: UIImageView?
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
@@ -22,18 +20,12 @@ class CartTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.backgroundColor = R.color.white()
+        self.backgroundColor = R.color.darkWhite()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
-    }
     @IBAction func plusButton(_ sender: Any) {
         
     }
-    
-    
 }
 
 extension CartTableViewCell: CartCellView {
@@ -50,6 +42,6 @@ extension CartTableViewCell: CartCellView {
     }
     
     func display(pcs: String) {
-        pcsCountLabel.text = pcs
+        pcsCountLabel.text = "1"
     }
 }

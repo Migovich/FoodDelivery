@@ -35,18 +35,22 @@ class CartProductsGatewayImplementation: CartProductsGateway {
         self.observers = observers
     }
     
+    // MARK: - Observer
+    
     func subscribe(_ observer: CartProductsObserver) {
         print("\(observer) subscribed")
         observers.append(observer)
     }
     
     func unsubscribe(_ observer: CartProductsObserver) {
-         print("\(observer) unsubscribed")
+        print("\(observer) unsubscribed")
         if let index = observers.firstIndex(where: {$0 === observer}) {
             observers.remove(at: index)
         }
     }
 
+    // MARK: - Storage
+    
     func add(product: Product) {
         observers.forEach {$0.didAddToCart(product: product, count: 1)}
         storage?.add(product, count: 1)

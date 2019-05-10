@@ -91,7 +91,7 @@ class MenuPresenterImplementation: MenuPresenter {
     
     func getProduct(section: Int, row: Int) -> Product {
         let product = menuSections[section].category.products[row]
-        //print(product)
+        CartProductsGatewayImplementation.shared.add(product: product)
         return product
     }
     

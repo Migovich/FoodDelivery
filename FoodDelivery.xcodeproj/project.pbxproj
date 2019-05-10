@@ -181,7 +181,6 @@
 		CD6C6CEA221F266D004C9DD0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				CDB1F0E42282E74800ACDE78 /* Other */,
 				CD700E7D22216D9000435D4D /* Main */,
 				CD6C6CEB221F2696004C9DD0 /* Menu */,
 				CD6C6CED221F26BE004C9DD0 /* Cart */,
@@ -219,6 +218,7 @@
 		CD6C6CED221F26BE004C9DD0 /* Cart */ = {
 			isa = PBXGroup;
 			children = (
+				CDB1F0E522846A0000ACDE78 /* Checkout */,
 				CD2EECCA222AF90F00C9FFAB /* CartConfigurator.swift */,
 				CD2EECC6222AF8EE00C9FFAB /* CartPresenter.swift */,
 				CD880AC7225CDF2600548929 /* CartTableViewController.swift */,
@@ -276,11 +276,11 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
-		CDB1F0E42282E74800ACDE78 /* Other */ = {
+		CDB1F0E522846A0000ACDE78 /* Checkout */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Other;
+			path = Checkout;
 			sourceTree = "<group>";
 		};
 		CDD6C15D221D687B0005710C = {

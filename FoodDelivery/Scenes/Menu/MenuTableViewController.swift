@@ -11,19 +11,26 @@ import UIKit
 class MenuTableViewController: UITableViewController {
     
     // MARK: - Properties
+    
     var presenter: MenuPresenter!
     var configurator = MenuConfiguratorImplementation()
-    //let observer = CartProductsGatewayImplementation()
-    let cartObserver = CartTableViewController()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configurator.configure(productsTableViewController: self)
         presenter.viewDidLoad()
-        //observer.subscribe(cartObserver)
     }
     
-    // MARK: - Table view data source
+    // MARK: - Section HeaderView
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 46
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return presenter.numberOfSections
+    }
+    
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(CategoryHeaderFooterView.self)
         presenter.configure(header: headerView, delegate: self, section: section)
@@ -35,18 +42,12 @@ class MenuTableViewController: UITableViewController {
             headerView.setupView()
         }
     }
-    
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 46
-    }
 
+    // MARK: - CellTableView
+    
     override func tableView(_ tableView: UITableView,
                             heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 230
-    }
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return presenter.numberOfSections
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -101,6 +102,5 @@ extension MenuTableViewController: ProductTableViewCellDelegate {
         guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
         print(tappedIndexPath)
         let product = presenter.getProduct(section: tappedIndexPath.section, row: tappedIndexPath.row)
-        //observer.add(product: product) 
     }
 }
