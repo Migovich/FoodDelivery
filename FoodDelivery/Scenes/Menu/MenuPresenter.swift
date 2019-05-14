@@ -64,7 +64,7 @@ class MenuPresenterImplementation: MenuPresenter {
     }
     
     func viewDidLoad() {
-        view?.displayScreenTitle(title: "Menu")
+        view?.displayScreenTitle(title: "Меню")
         view?.setupView()
             self.displayCategoriesUseCase.displayCategories { (result) in
                 switch result {

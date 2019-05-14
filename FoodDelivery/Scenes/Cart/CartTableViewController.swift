@@ -42,10 +42,10 @@ class CartTableViewController: UITableViewController {
         let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 50))
         let confirmButton: UIButton = {
             let button = UIButton(type: .system)
-            button.setTitle("CONFIRM ORDER", for: .normal)
+            button.setTitle("Оформити замовлення", for: .normal)
             button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
-            button.setTitleColor(R.color.gray(), for: .normal)
-            button.backgroundColor = R.color.darkWhite()
+            button.setTitleColor(R.color.darkWhite(), for: .normal)
+            button.backgroundColor = R.color.gray()
             button.addTarget(self, action: #selector(confirmOrder), for: .touchUpInside)
             button.layer.cornerRadius = 15
             return button
@@ -67,7 +67,8 @@ class CartTableViewController: UITableViewController {
     // MARK: - Selectors
     
     @objc func confirmOrder() {
-        
+        let newViewController = CheckoutViewController()
+        self.navigationController?.pushViewController(newViewController, animated: true)
     }
 }
 
@@ -78,7 +79,6 @@ extension CartTableViewController: CartView {
     
     func setupView() {
         self.view.backgroundColor = R.color.mainGreen()
-        navigationController?.navigationBar.prefersLargeTitles = true
         tableView.register(CartTableViewCell.self)
     }
     

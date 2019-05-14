@@ -19,7 +19,7 @@ protocol CartProductsGateway {
     func unsubscribe(_ observer: CartProductsObserver)
     func add(product: Product)
     func remove(product: Product)
-    func changeCartItemPcs(product: Product, count: Int)
+    func changeCartItem(for changes: CartProductsChanges)
 }
 
 class CartProductsGatewayImplementation: CartProductsGateway {
@@ -60,7 +60,7 @@ class CartProductsGatewayImplementation: CartProductsGateway {
         storage?.remove(product)
     }
     
-    func changeCartItemPcs(product: Product, count: Int) {
-
+    func changeCartItem(for changes: CartProductsChanges) {
+        
     }
 }

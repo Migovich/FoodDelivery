@@ -12,7 +12,6 @@ protocol CartView: class {
     func displayScreenTitle(title: String)
     func setupView()
     func refreshCartView()
-   // func insertRowAtIndex //будет рендерить
 }
 
 protocol CartCellView {
@@ -36,7 +35,7 @@ class CartPresenterImplementation: CartPresenter {
     var storage = [Product: Int]()
 
     var numberOfRows: Int {
-        return products.count
+        return storage.count
     }
     
     init(view: CartView) {
@@ -44,23 +43,24 @@ class CartPresenterImplementation: CartPresenter {
     }
     
     func viewDidLoad() {
-        view?.displayScreenTitle(title: "Cart")
+        view?.displayScreenTitle(title: "Кошик")
         view?.setupView()
     }
     
     func configure(cell: CartCellView, for indexPath: IndexPath) {
-        let product = products[indexPath.row]
+        let product = Array(storage)[indexPath.row].key
+        let count = storage[product]
+        
         cell.display(imageURL: product.imageURL)
         cell.display(price: "\(product.price) грн")
         cell.display(title: product.title)
-        cell.display(pcs: "1")
+        cell.display(pcs: "\(count!)")
     }
 }
 
 extension CartPresenterImplementation: CartProductsUseCaseDelegate {
     func add(product: Product, count: Int) {
-        products.append(product)
-        storage[product] = count + 1
+        storage[product] = count
         view?.refreshCartView()
     }
     

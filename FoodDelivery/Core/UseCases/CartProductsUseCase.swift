@@ -21,7 +21,7 @@ protocol CartProductsUseCase {
 
 class CartProductsUseCaseImplementation: CartProductsUseCase, CartProductsObserver {
     
-    var gateway: CartProductsGateway?
+    var gateway: CartProductsGateway!
     private weak var delegate: CartProductsUseCaseDelegate?
     
     init(gateway: CartProductsGateway, delegate: CartProductsUseCaseDelegate) {
@@ -33,7 +33,7 @@ class CartProductsUseCaseImplementation: CartProductsUseCase, CartProductsObserv
     // MARK: - Use case for presenter
     
     func increaseProductPcs(product: Product, count: Int) {
-        
+         
     }
   
     func decreaseProductPcs(product: Product, count: Int) {

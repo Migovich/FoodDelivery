@@ -15,10 +15,14 @@ class MainTabBarViewController: UITabBarController {
     private let profileVC = ProfileViewController()
     
     override func viewDidLoad() {
-        viewControllers = [setupController(viewController: mainVC, title: "Menu", image: R.image.menu()!),
-                           setupController(viewController: cartVC, title: "Cart", image: R.image.cart()!),
-                           setupController(viewController: profileVC, title: "Profile", image: R.image.profile()!)]
+        viewControllers = [setupController(viewController: mainVC, title: "Меню", image: R.image.menu()!),
+                           setupController(viewController: cartVC, title: "Кошик", image: R.image.cart()!),
+                           setupController(viewController: profileVC, title: "Профіль", image: R.image.profile()!)]
         tabBar.tintColor = R.color.gray()
+    }
+    
+    override func loadViewIfNeeded() {
+        
     }
     
     func setupController(viewController: UIViewController, title: String, image: UIImage) -> UINavigationController {

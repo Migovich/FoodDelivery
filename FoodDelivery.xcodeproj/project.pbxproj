@@ -40,6 +40,9 @@
 		CDA670112242DF2E00016380 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA670102242DF2E00016380 /* Product.swift */; };
 		CDA6703A22457D9300016380 /* ApiProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA6703922457D9300016380 /* ApiProduct.swift */; };
 		CDA6703E22467D2000016380 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDA6703C22467D2000016380 /* ProductTableViewCell.xib */; };
+		CDB1F115228725AE00ACDE78 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB1F113228725AE00ACDE78 /* CheckoutViewController.swift */; };
+		CDB1F116228725AE00ACDE78 /* CheckoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDB1F114228725AE00ACDE78 /* CheckoutViewController.xib */; };
+		CDB1F11E2288CDBC00ACDE78 /* CartProductsChanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB1F11D2288CDBC00ACDE78 /* CartProductsChanges.swift */; };
 		CDD6C16A221D687C0005710C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD6C169221D687C0005710C /* AppDelegate.swift */; };
 		CDD6C171221D687D0005710C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDD6C170221D687D0005710C /* Assets.xcassets */; };
 		CDD6C174221D687D0005710C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDD6C172221D687D0005710C /* LaunchScreen.storyboard */; };
@@ -90,6 +93,9 @@
 		CDA670102242DF2E00016380 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		CDA6703922457D9300016380 /* ApiProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProduct.swift; sourceTree = "<group>"; };
 		CDA6703C22467D2000016380 /* ProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
+		CDB1F113228725AE00ACDE78 /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
+		CDB1F114228725AE00ACDE78 /* CheckoutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckoutViewController.xib; sourceTree = "<group>"; };
+		CDB1F11D2288CDBC00ACDE78 /* CartProductsChanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartProductsChanges.swift; sourceTree = "<group>"; };
 		CDD6C166221D687C0005710C /* FoodDelivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodDelivery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD6C169221D687C0005710C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDD6C170221D687D0005710C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -157,6 +163,7 @@
 				CD05C7AE22302F4B0077041E /* MenuSection.swift */,
 				CDA6700E2242DF1D00016380 /* Category.swift */,
 				CDA670102242DF2E00016380 /* Product.swift */,
+				CDB1F11D2288CDBC00ACDE78 /* CartProductsChanges.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -279,6 +286,8 @@
 		CDB1F0E522846A0000ACDE78 /* Checkout */ = {
 			isa = PBXGroup;
 			children = (
+				CDB1F113228725AE00ACDE78 /* CheckoutViewController.swift */,
+				CDB1F114228725AE00ACDE78 /* CheckoutViewController.xib */,
 			);
 			path = Checkout;
 			sourceTree = "<group>";
@@ -427,6 +436,7 @@
 				CDD6C174221D687D0005710C /* LaunchScreen.storyboard in Resources */,
 				CDA6703E22467D2000016380 /* ProductTableViewCell.xib in Resources */,
 				CDD6C171221D687D0005710C /* Assets.xcassets in Resources */,
+				CDB1F116228725AE00ACDE78 /* CheckoutViewController.xib in Resources */,
 				CD880ACC225CE34700548929 /* CartTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -529,6 +539,7 @@
 				CD2EECC9222AF8FA00C9FFAB /* CartViewRouter.swift in Sources */,
 				CD6C6CEF221F2701004C9DD0 /* ProfileViewController.swift in Sources */,
 				CDFEC59E224EAA730058B1C2 /* ApiResponse.swift in Sources */,
+				CDB1F115228725AE00ACDE78 /* CheckoutViewController.swift in Sources */,
 				CDDE0BB8224A9C6300EA0D85 /* ApiCategoryResponse.swift in Sources */,
 				CD2EECC5222AE8CB00C9FFAB /* MenuConfigurator.swift in Sources */,
 				CD2EECC7222AF8EE00C9FFAB /* CartPresenter.swift in Sources */,
@@ -546,6 +557,7 @@
 				CDFEC58F224E5FDA0058B1C2 /* DisplayMenuCategories.swift in Sources */,
 				CD6C6CF5221F2B6D004C9DD0 /* MainTabBarViewController.swift in Sources */,
 				CDA6700A2241151900016380 /* R.generated.swift in Sources */,
+				CDB1F11E2288CDBC00ACDE78 /* CartProductsChanges.swift in Sources */,
 				CD6A09E1222039C20003162E /* UIViewExtension.swift in Sources */,
 				CD05C784222DDA370077041E /* ProductTableViewCell.swift in Sources */,
 				CD48FC0A223C20F0004095E8 /* CategoryHeaderFooterView.swift in Sources */,

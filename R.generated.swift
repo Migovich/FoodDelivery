@@ -134,10 +134,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
   struct nib {
     /// Nib `CartTableViewCell`.
     static let cartTableViewCell = _R.nib._CartTableViewCell()
+    /// Nib `CheckoutViewController`.
+    static let checkoutViewController = _R.nib._CheckoutViewController()
     /// Nib `ProductTableViewCell`.
     static let productTableViewCell = _R.nib._ProductTableViewCell()
     
@@ -145,6 +147,12 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.cartTableViewCell) instead")
     static func cartTableViewCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.cartTableViewCell)
+    }
+    
+    /// `UINib(name: "CheckoutViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.checkoutViewController) instead")
+    static func checkoutViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.checkoutViewController)
     }
     
     /// `UINib(name: "ProductTableViewCell", in: bundle)`
@@ -155,6 +163,10 @@ struct R: Rswift.Validatable {
     
     static func cartTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CartTableViewCell? {
       return R.nib.cartTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CartTableViewCell
+    }
+    
+    static func checkoutViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.checkoutViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
     
     static func productTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ProductTableViewCell? {
@@ -202,6 +214,17 @@ struct _R: Rswift.Validatable {
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CartTableViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CartTableViewCell
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _CheckoutViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "CheckoutViewController"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
       
       fileprivate init() {}

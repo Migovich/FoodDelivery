@@ -42,6 +42,6 @@ extension CartTableViewCell: CartCellView {
     }
     
     func display(pcs: String) {
-        pcsCountLabel.text = "1"
+        pcsCountLabel.text = pcs
     }
 }

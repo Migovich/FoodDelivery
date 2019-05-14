@@ -79,7 +79,6 @@ extension MenuTableViewController: MenuView {
     
     func setupView() {
         self.view.backgroundColor = R.color.mainGreen()
-        navigationController?.navigationBar.prefersLargeTitles = true
         tableView.register(ProductTableViewCell.self)
         tableView.register(CategoryHeaderFooterView.self)
     }
