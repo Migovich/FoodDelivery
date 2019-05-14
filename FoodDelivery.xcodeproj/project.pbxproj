@@ -43,6 +43,7 @@
 		CDB1F115228725AE00ACDE78 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB1F113228725AE00ACDE78 /* CheckoutViewController.swift */; };
 		CDB1F116228725AE00ACDE78 /* CheckoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDB1F114228725AE00ACDE78 /* CheckoutViewController.xib */; };
 		CDB1F11E2288CDBC00ACDE78 /* CartProductsChanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB1F11D2288CDBC00ACDE78 /* CartProductsChanges.swift */; };
+		CDB1F120228AEE8900ACDE78 /* CheckoutPopUpWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB1F11F228AEE8900ACDE78 /* CheckoutPopUpWindow.swift */; };
 		CDD6C16A221D687C0005710C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD6C169221D687C0005710C /* AppDelegate.swift */; };
 		CDD6C171221D687D0005710C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDD6C170221D687D0005710C /* Assets.xcassets */; };
 		CDD6C174221D687D0005710C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDD6C172221D687D0005710C /* LaunchScreen.storyboard */; };
@@ -96,6 +97,7 @@
 		CDB1F113228725AE00ACDE78 /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
 		CDB1F114228725AE00ACDE78 /* CheckoutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckoutViewController.xib; sourceTree = "<group>"; };
 		CDB1F11D2288CDBC00ACDE78 /* CartProductsChanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartProductsChanges.swift; sourceTree = "<group>"; };
+		CDB1F11F228AEE8900ACDE78 /* CheckoutPopUpWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutPopUpWindow.swift; sourceTree = "<group>"; };
 		CDD6C166221D687C0005710C /* FoodDelivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodDelivery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD6C169221D687C0005710C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDD6C170221D687D0005710C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 			children = (
 				CDB1F113228725AE00ACDE78 /* CheckoutViewController.swift */,
 				CDB1F114228725AE00ACDE78 /* CheckoutViewController.xib */,
+				CDB1F11F228AEE8900ACDE78 /* CheckoutPopUpWindow.swift */,
 			);
 			path = Checkout;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				CDA6700A2241151900016380 /* R.generated.swift in Sources */,
 				CDB1F11E2288CDBC00ACDE78 /* CartProductsChanges.swift in Sources */,
 				CD6A09E1222039C20003162E /* UIViewExtension.swift in Sources */,
+				CDB1F120228AEE8900ACDE78 /* CheckoutPopUpWindow.swift in Sources */,
 				CD05C784222DDA370077041E /* ProductTableViewCell.swift in Sources */,
 				CD48FC0A223C20F0004095E8 /* CategoryHeaderFooterView.swift in Sources */,
 				CD049DA7223ABE00009280D5 /* ReusableView.swift in Sources */,

@@ -13,9 +13,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CheckoutViewController" customModule="FoodDelivery" customModuleProvider="target">
             <connections>
+                <outlet property="addressTextField" destination="VJz-Xf-T9t" id="hNJ-qi-nTk"/>
+                <outlet property="cashTypeSC" destination="ZaH-SN-gVL" id="QtQ-iB-Rm0"/>
                 <outlet property="confirmButton" destination="eL0-rA-4iV" id="2QS-2P-Yjb"/>
                 <outlet property="deliveryType" destination="1ZP-zI-XL9" id="b0D-wH-YYU"/>
+                <outlet property="deliveryTypeSC" destination="1ZP-zI-XL9" id="ftk-nP-PeH"/>
+                <outlet property="nameTextField" destination="D24-pt-zKT" id="42h-FU-4cR"/>
                 <outlet property="paymentType" destination="ZaH-SN-gVL" id="DMp-Rw-Kbx"/>
+                <outlet property="phoneNumberTextField" destination="VJz-Xf-T9t" id="07C-Z9-x9r"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -48,11 +53,11 @@
                                     <color key="textColor" name="DarkWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oXP-dl-csy">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введіть номер телефону" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oXP-dl-csy">
                                     <rect key="frame" x="10" y="118" width="394" height="30"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" textContentType="tel"/>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Адрес доставки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFA-Be-1VE">
                                     <rect key="frame" x="10" y="158" width="147.5" height="24"/>
@@ -60,7 +65,7 @@
                                     <color key="textColor" name="DarkWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VJz-Xf-T9t">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введіть адрес доставки" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VJz-Xf-T9t">
                                     <rect key="frame" x="10" y="192" width="394" height="30"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
